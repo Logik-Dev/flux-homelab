@@ -1,0 +1,4 @@
+resources:
+  - ../base/common
+  #- slow-nfs
+  - fast-nfs
