@@ -1,4 +1,2 @@
 resources:
-  - ../base/common
-  #- slow-nfs
-  - fast-nfs
+  - nfs-provisioner

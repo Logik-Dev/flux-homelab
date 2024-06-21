@@ -1,5 +1,0 @@
-namespace: nfs-provisioner
-resources:
-  - helm-release.yml
-configurations:
-  - kustomizeconfig.yml

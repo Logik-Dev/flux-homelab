@@ -15,6 +15,9 @@ spec:
         name: nfs-provisioner
         namespace: nfs-provisioner
       interval: 10m
+  valuesFrom:
+  - kind: Secret
+    name: slow-nfs-values
   values:
     storageClass:
       name: slow-nfs

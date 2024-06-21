@@ -1,0 +1,12 @@
+namespace: nfs-provisioner
+resources:
+  - namespace.yml
+  - helm-repository.yml
+  - fast-nfs-helm-release.yml
+  - slow-nfs-helm-release.yml
+configurations:
+  - kustomizeconfig.yml
+secretGenerator:
+  - name: slow-nfs-values
+    files:
+    - values.yaml=slow-nfs-values.yml
