@@ -1,0 +1,5 @@
+---
+namespace: projectcontour
+resources:
+  - https://projectcontour.io/quickstart/contour-gateway-provisioner.yaml
+
