@@ -3,8 +3,8 @@ kind: Secret
 metadata:
     name: cloudflare-token
     namespace: cert-manager
-data:
-    token: ENC[AES256_GCM,data:H33oCvQbbnrD/exGDHz40ibVcHQGrfxYa8+jvml2l0vDGEBB/dObIibV3FTZ9vUZwCMfjWBFwsA=,iv:3VKQ7qZQe9neSsoAQorYxxb6QF6UqbQQJ1HS0y19PIw=,tag:Qch3UESQ18aIpXaTCf/bmQ==,type:str]
+stringData:
+    token: ENC[AES256_GCM,data:jh9eR1WLLn67RcfDGpqop3jvWFRuRnZbb5Iry7LUyma1cb8ILNjEyw==,iv:4Yq/V0sV87AJt1cxOrzYG/ykVRBQSF7NhTJprhftIe0=,tag:9gaDSh/pthO0RiCxwt4O+g==,type:str]
 type: Opaque
 sops:
     kms: []
@@ -15,14 +15,14 @@ sops:
         - recipient: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKd1dDaFc0RVh3Z1lUS3dP
-            anFPZWM5YnFwYTZsWTF6cW16OVVMQS8zeG40CkNUWlhieUFuY0hlcXA4Y0dtbHpU
-            RmJaTThOM05SK3NDMlBkMEM0cElYbWsKLS0tIHFiTmE2a0E4bHkyYUxFZVRRbVlo
-            Z3F6NGxNSFV4b0hIci9sUnF1QVpBWlkKaz2OpfvEtgAVQMe+02up9E+CtXKhvu7l
-            tz0yrojcnM6N37psGZ8kyyr0JVnaVo3gca3xaMi/+tPdXjdSMYw/MQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxZldic3pFWWhlL0tkU2ZN
+            UW5vc0lxeThOeFdwcWMvUUVlWWozMFhPczFFCmkrblNvRDNmZzhsbjlhazBtQkZT
+            MkFxbThtdDZ4ZnJsS3B5OXFSUHpIMk0KLS0tIDd3MEJsSThZYlYyRWszbDFuemlk
+            VWRLOWdmRkVWWW90c3lISlZNUEtzbnMKvY0iox8SZFmRT84zfH8tyf2NUlYBPcvC
+            /0G3VlXJh7Dp96F01HHOaHpV2TQ3qOeV1aW/Vh+arRULPezvmFks2g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-22T08:46:43Z"
-    mac: ENC[AES256_GCM,data:W/EKK/QU7jN1E0qlAUXv8Uon/IYJ/1xeoojY4tSLV+pkolEldhHcf3qE1QMrqAH7qWvQuX3HEtUwSNnM4LnyKAtkZ+3ewG265vSOh/gTpbDXA/Ng9iywQxY2t65g9FW8Cd4FjVjS1ik1Y1ocH7GxCIbTNR+Dt9GU8xAl3wae8NI=,iv:qk41NMoOn8+XGR2kCFedDOR779qygQHb1P+jC3jPDAg=,tag:rCbrRRyBsoc+qMvqmAGuOg==,type:str]
+    lastmodified: "2024-06-22T11:17:50Z"
+    mac: ENC[AES256_GCM,data:8ImlRMKElmmDicMkm4D0e6d/fKSs7lrl17tNF9YOGBEnv8WiMvgG7i0rE97Vf1CwfI/WdhRMrec91nzoMT62pt7lTFKcv+JzoNVpslXWGTauvGi1v0KvGVOvnBUamotoUzOrJVzxi/ZWIlVUBO9lY1AeqlPiunLy4ZMPlwkSpnU=,iv:vStqM0orGEmkLLuHINWSXQy8olEvgKnomfdu5z5EviM=,tag:WQsV4xXfcWb7+uIfq+lFTg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
