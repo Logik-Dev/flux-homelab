@@ -4,3 +4,4 @@ resources:
   - deployment.yml
   - service.yml
   - image-repository.yml
+  - image-policy.yml
