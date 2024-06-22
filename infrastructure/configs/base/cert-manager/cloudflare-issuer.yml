@@ -12,7 +12,10 @@ spec:
       name: letsencrypt
     solvers:
       - selector:
-          dnsNames: ["*.${domain}"]
+          dnsNames: 
+          - "*.${domain}"
+          - "*.dev.${domain}"
+          - "*.prod.${domain}"
         dns01:
           cloudflare:
             email: ${email}
