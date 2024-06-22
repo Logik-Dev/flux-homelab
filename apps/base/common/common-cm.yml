@@ -4,6 +4,6 @@ kind: ConfigMap
 metadata:
   name: common-env
 data:
-  PUID: "${uid}"
-  PGID: "${uid}"
+  PUID: "\"${uid}\""
+  PGID: "\"${uid}\""
   TZ: Europe/Paris
