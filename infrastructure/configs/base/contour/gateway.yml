@@ -8,7 +8,19 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:
   gatewayClassName: contour
-  listeners:
+  listeners:    
+    # internal
+    - name: internal-https
+      hostname: "replaced.by.env"
+      port: 443
+      protocol: HTTPS
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: ${domain}
+      allowedRoutes:
+        namespaces:
+          from: All
     # external
     - name: external-https
       hostname: "*.${domain}"

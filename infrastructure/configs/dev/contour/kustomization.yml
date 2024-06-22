@@ -1,6 +1,10 @@
 resources:
   - ../../base/contour
 patches:
-  - path: gateway.yml 
-
-
+  - target:
+      kind: Gateway
+      name: contour
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "dev.${domain}"
