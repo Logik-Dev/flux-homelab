@@ -1,3 +1,4 @@
 resources:
   - metallb
-  - ../base/contour
+  - ../base/cert-manager
+  - contour
