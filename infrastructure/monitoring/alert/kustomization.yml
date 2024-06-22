@@ -1,5 +1,7 @@
 resources:
   - namespace.yml
   - slack-bot-token.yml
-  - slack-provider.yml
-  - alert.yml
+  - slack-errors-provider.yml
+  - flux-system-errors.yml
+  - image-automations-provider.yml
+  - image-automations-alert.yml

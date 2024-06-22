@@ -1,16 +1,16 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: alert 
+  name: flux-system-errors 
   namespace: monitoring
 spec:
-  summary: "Flux events informations"
+  summary: "Flux system errors"
   eventMetadata:
     env: ""
     cluster: ""
   providerRef:
-    name: slack-bot
-  eventSeverity: info
+    name: slack-errors-provider
+  eventSeverity: error
   eventSources:
     - kind: GitRepository
       name: '*'

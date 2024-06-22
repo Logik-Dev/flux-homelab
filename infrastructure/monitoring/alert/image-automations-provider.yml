@@ -1,11 +1,11 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
-  name: slack-bot
+  name: image-automations-provider
   namespace: monitoring
 spec:
   type: slack
-  channel: kubernetes
+  channel: image-automations
   address: https://slack.com/api/chat.postMessage
   secretRef:
     name: slack-bot-token

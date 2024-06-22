@@ -1,0 +1,35 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: image-automations-alert
+  namespace: monitoring
+spec:
+  summary: "Image automations notifications"
+  eventMetadata:
+    env: ""
+    cluster: ""
+  providerRef:
+    name: image-automations-provider
+  eventSeverity: info
+  eventSources:
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: apps
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: cert-manager
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: metallb-system
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: metallb-system
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: projectcontour
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: monitoring
+    - kind: ImageUpdateAutomation
+      name: '*'
+      namespace: nfs-provisioner
