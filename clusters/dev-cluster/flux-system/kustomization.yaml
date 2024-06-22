@@ -12,5 +12,5 @@ patches:
         path: /spec/decryption/provider
         value: sops
       - op: add
-        path /spec/decryption/secretRef/name
+        path: /spec/decryption/secretRef/name
         value: sops-age
