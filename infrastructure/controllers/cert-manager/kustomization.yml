@@ -1,0 +1,5 @@
+namespace: cert-manager
+resources:
+  - namespace.yml
+  - helm-repository.yml
+  - helm-release.yml
