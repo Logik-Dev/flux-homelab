@@ -3,8 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: common-env
-  namespace: apps
 data:
-  PUID: ${uid}
-  PGID: ${uid}
+  PUID: "${uid}"
+  PGID: "${uid}"
   TZ: Europe/Paris
