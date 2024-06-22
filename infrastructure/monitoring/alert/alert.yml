@@ -1,0 +1,23 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: alert 
+  namespace: flux-system
+spec:
+  summary: "watch all"
+  eventMetadata:
+    env: "development"
+    cluster: "dev-cluster"
+    region: ""
+  providerRef:
+    name: slack-bot
+  eventSeverity: info
+  eventSources:
+    - kind: GitRepository
+      name: '*'
+    - kind: Kustomization
+      name: '*'
+    - kind: HelmRelease
+      name: '*'
+    - kind: HelmRepository
+      name: '*'
