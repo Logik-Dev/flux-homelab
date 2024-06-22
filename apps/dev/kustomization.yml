@@ -3,3 +3,4 @@ resources:
   - ../base
 patches:
   - path: patch_wg_service.yml
+  - path: patch_vaultwarden_route.yml
