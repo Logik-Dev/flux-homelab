@@ -6,4 +6,5 @@ spec:
   imageRepositoryRef:
     name: vaultwarden
   policy:
-    semver: 1.x
+    semver: 
+      range: 1.x
