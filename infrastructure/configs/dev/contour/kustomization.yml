@@ -7,9 +7,9 @@ patches:
     patch: |
       - op: replace  
         path: /spec/listeners/0/hostname
-        value: "dev.${domain}"
+        value: "*.dev.${domain}"
       - op: add
         path: /spec/listeners/0/tls
         value:
           certificateRefs:
-            - name: "*.dev.${domain}"
+            - name: "dev.${domain}"
