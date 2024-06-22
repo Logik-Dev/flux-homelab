@@ -5,8 +5,8 @@ metadata:
 spec:
   imageRepositoryRef:
     name: wireguard
+  filterTags:
+    pattern: ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>\d*)-(?P<buildmetadata>r\d*)-(?P<incr>ls\d*)
   policy:
-    filterTags:
-      pattern: ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>\d*)-(?P<buildmetadata>r\d*)-(?P<incr>ls\d*)
     semver:
       range: 1.0.*
