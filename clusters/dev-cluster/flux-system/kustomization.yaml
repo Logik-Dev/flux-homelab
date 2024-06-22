@@ -9,8 +9,8 @@ patches:
       name:  flux-system
     patch: |
       - op: add
-        path: /spec/decryption/provider
-        value: sops
-      - op: add
-        path: /spec/decryption/secretRef/name
-        value: sops-age
+        path: /spec/decryption
+        value:
+          provider: sops
+          secretRef:
+            name: sops-age
