@@ -1,0 +1,3 @@
+resources:
+  - secret.yml
+  - cron-job.yml
