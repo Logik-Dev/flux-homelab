@@ -1,4 +1,3 @@
----
 # deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
         - name: wireguard
-          image: lscr.io/linuxserver/wireguard:1.0.20210914-r4-ls37 # {"$imagepolicy": "apps:wireguard"}
+          image: lscr.io/linuxserver/wireguard:1.0.20210914-r4-ls39 # {"$imagepolicy": "apps:wireguard"}
           ports:
             - containerPort: 51820
               protocol: UDP
@@ -36,7 +35,7 @@ spec:
                 value: '1'
           resources:
             requests:
-              cpu: 10m   
+              cpu: 10m
               memory: 128Mi
             limits:
               cpu: 300m
