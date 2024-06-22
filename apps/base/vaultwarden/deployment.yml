@@ -23,7 +23,7 @@ spec:
               name: fast-nfs
           env:
             - name: DOMAIN
-              value: "https://vaultwarden.${ domain }"
+              value: "https://vaultwarden.${domain}"
             - name: SIGNUPS_ALLOWED
               value: 'false'
           resources:
