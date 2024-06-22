@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: slack-bot-token
+    namespace: monitoring
 data:
     token: ENC[AES256_GCM,data:sMbCZFERgUFMk0wMUEwi3BfeAfUn+g3gFqzb+yRAWM6oIZGC5VeXEP6/GISVzczktiEdWScdiT2fSK8hKfXQLXZv6FSboA6YIGZECg==,iv:8579NNeXn3prPfpnCOr56YRFnvt04mxIikcj6cgBIss=,tag:0+McBhhYTSimbeEkttllFA==,type:str]
 type: Opaque
