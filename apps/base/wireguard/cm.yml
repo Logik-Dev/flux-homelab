@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: wireguard-env
 data:
-  SERVERURL: "wireguard.${domain}"
+  SERVERURL: "\"wireguard.${domain}\""
   SERVERPORT: '51820'
   PEERS: laptop,phone1,phone2,server
   PEERDNS: 192.168.21.168,1.1.1.1
