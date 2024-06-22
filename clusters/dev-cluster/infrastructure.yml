@@ -76,6 +76,16 @@ spec:
   path: ./infrastructure/monitoring
   prune: true
   wait: true
+  patches:
+    - patch: |
+        - op: replace
+          path: /spec/eventMetadata/env
+          value: dev
+        - op: replace
+          path: /spec/eventMetadata/cluster
+          value: dev-cluster
+      target:
+        kind: Alert
   decryption:
     provider: sops
     secretRef:
