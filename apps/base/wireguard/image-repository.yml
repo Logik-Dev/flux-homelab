@@ -3,5 +3,5 @@ kind: ImageRepository
 metadata:
   name: wireguard
 spec:
-  image: lsio/linuxserver/wireguard
+  image: lscr.io/linuxserver/wireguard
   interval: 5m
