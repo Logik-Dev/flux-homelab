@@ -1,0 +1,5 @@
+namespace: apps
+resources:
+  - ../base
+patches:
+  - path: patch_wg_service.yml
