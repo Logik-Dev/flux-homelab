@@ -1,0 +1,6 @@
+resources:
+  - ../../base/contour
+patches:
+  - path: gateway.yml 
+
+

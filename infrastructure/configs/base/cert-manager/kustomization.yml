@@ -1,0 +1,3 @@
+resources:
+  - cloudflare-token.yml
+  - cloudflare-issuer.yml

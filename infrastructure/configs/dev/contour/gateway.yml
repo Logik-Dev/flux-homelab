@@ -4,20 +4,18 @@ apiVersion: gateway.networking.k8s.io/v1
 metadata:
   name: contour
   namespace: projectcontour
-  annotations:
-    cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:
-  gatewayClassName: contour
   listeners:
-    # external
-    - name: external-https
-      hostname: "*.${domain}"
-      port: 444
+    # internal
+    - name: internal-https
+      hostname: '*.dev.${domain}'
+      port: 443
       protocol: HTTPS
       tls:
         mode: Terminate
         certificateRefs:
-          - name: ${domain}
+          - name: '*.dev.${domain}'
       allowedRoutes:
         namespaces:
           from: All
+
