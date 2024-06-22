@@ -6,7 +6,8 @@ spec:
   imageRepositoryRef:
     name: wireguard
   filterTags:
-    pattern: ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>\d*)-(?P<buildmetadata>r\d*)-(?P<incr>ls\d*)
+    pattern: ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>\d*)-(?P<buildmetadata>r\d*)-ls(?P<incr>\d*)
+    extract: '$incr'
   policy:
-    semver:
-      range: 1.0.*
+    numerical:
+      order: asc
