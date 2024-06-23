@@ -5,10 +5,10 @@ metadata:
   name: vaultwarden
 spec:
   parentRefs:
-    - name: contour
+    - name: traefik
       namespace: infrastructure
       sectionName: external-https
-    - name: contour
+    - name: traefik
       namespace: infrastructure
       sectionName: internal-https
   rules:

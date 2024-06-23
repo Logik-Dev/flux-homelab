@@ -12,3 +12,7 @@ spec:
         kind: HelmRepository
         name: traefik
       interval: 10m
+  values:
+    experimental:
+      kubernetesGateway:
+        enabled: true

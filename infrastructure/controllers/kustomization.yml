@@ -1,6 +1,6 @@
 namespace: infrastructure
 resources:
   - common
-  - contour
+  #- contour
   - cert-manager
   - traefik
