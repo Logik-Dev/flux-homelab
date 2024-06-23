@@ -21,8 +21,6 @@ spec:
           volumeMounts:
             - mountPath: /config
               name: fast-nfs
-            - mountPath: /slow-nfs
-              name: slow-nfs
           envFrom:
             - configMapRef:
                 name: common-env
@@ -37,7 +35,4 @@ spec:
         - name: fast-nfs
           persistentVolumeClaim:
             claimName: prowlarr
-        - name: slow-nfs
-          persistentVolumeClaim:
-            claimName: slow-nfs
 
