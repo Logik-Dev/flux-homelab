@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,7 +13,7 @@ spec:
     spec:
       containers:
         - name: prowlarr
-          image: lscr.io/linuxserver/prowlarr:1.18.0.4543-ls74 # {"$imagepolicy": "apps:prowlarr"}
+          image: lscr.io/linuxserver/prowlarr:1.19.0.4568-ls75 # {"$imagepolicy": "apps:prowlarr"}
           ports:
             - containerPort: 9696
               name: http
@@ -35,4 +34,3 @@ spec:
         - name: fast-nfs
           persistentVolumeClaim:
             claimName: prowlarr
-
