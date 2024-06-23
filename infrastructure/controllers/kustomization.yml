@@ -3,3 +3,4 @@ resources:
   - common
   - contour
   - cert-manager
+  - traefik

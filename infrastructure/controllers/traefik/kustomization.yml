@@ -1,0 +1,3 @@
+resources:
+  - helm-repository.yml
+  - helm-release.yml
