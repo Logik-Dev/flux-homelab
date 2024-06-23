@@ -1,8 +1,7 @@
 namespace: infrastructure
 resources:
-  - namespace.yml
   #- github.com/metallb/metallb/config/native?ref=v0.14.5
-  - metallb
+  #- metallb
   #- traefik
   - contour
   #- gateway.yml
