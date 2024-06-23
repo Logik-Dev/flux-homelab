@@ -15,13 +15,6 @@ metadata:
 spec:
   gatewayClassName: contour
   listeners:    
-    # http
-    - name: http
-      port: 80
-      protocol: HTTP
-      allowedRoutes:
-        namespaces:
-          from: All
     #internal
     - name: internal-https
       hostname: "replaced.by.env"
