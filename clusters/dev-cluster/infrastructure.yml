@@ -47,7 +47,7 @@ spec:
   dependsOn:
     - name: metallb-controller
   interval: 1h
-  retryInterval: 1m
+  retryInterval: 15s
   timeout: 5m
   sourceRef:
     kind: GitRepository
@@ -75,7 +75,7 @@ spec:
   dependsOn:
     - name: metallb-config 
   interval: 1h
-  retryInterval: 1m
+  retryInterval: 15s
   timeout: 5m
   sourceRef:
     kind: GitRepository
@@ -102,7 +102,7 @@ spec:
   dependsOn:
     - name: infra-controllers
   interval: 1h
-  retryInterval: 1m
+  retryInterval: 15s
   timeout: 5m
   sourceRef:
     kind: GitRepository
