@@ -1,4 +1,5 @@
 ---
+# Misc
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -19,6 +20,7 @@ spec:
     secretRef:
       name: sops-age
 ---
+# Metallb controller
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -31,10 +33,11 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/controllers/metallb
+  path: ./infrastructure/metallb/controller
   prune: true
   wait: true
 ---
+# Metallb config
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -49,7 +52,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs/base/metallb
+  path: ./infrastructure/metallb/config
   prune: true
   wait: true
   patches:
@@ -62,6 +65,7 @@ spec:
         value:
           - 10.0.111.40/29
 ---
+# Controllers
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -88,6 +92,7 @@ spec:
       - kind: Secret 
         name: cluster-secrets
 ---
+# Configs
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -102,7 +107,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs/dev
+  path: ./infrastructure/configs
   prune: true
   wait: true
   decryption:
@@ -113,8 +118,23 @@ spec:
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
-
+  patches:
+    - target:
+        kind: Gateway
+      patch: |
+        - op: replace  
+          path: /spec/listeners/0/hostname
+          value: "*.dev.${domain}"
+        - op: add
+          path: /spec/listeners/0/tls
+          value:
+            certificateRefs:
+              - name: "dev.${domain}"
+        - op: replace
+          path: /spec/listeners/1/hostname
+          value: "*.${domain}"
 ---
+# Monitoring
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
