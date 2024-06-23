@@ -38,6 +38,19 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
+  patches:
+  - target:
+      kind: Gateway
+      name: traefik
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "*.dev.${domain}"
+      - op: add
+        path: /spec/listeners/0/tls
+        value:
+          certificateRefs:
+            - name: "dev.${domain}"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -45,8 +58,8 @@ metadata:
   name: infra-configs
   namespace: flux-system
 spec:
-  #dependsOn:
-  #  - name: infra-controllers
+  dependsOn:
+    - name: infra-controllers
   interval: 1h
   retryInterval: 1m
   timeout: 5m

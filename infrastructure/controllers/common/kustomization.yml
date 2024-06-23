@@ -1,3 +1,2 @@
-namespace: infrastructure
 resources:
   - image-update.yml
