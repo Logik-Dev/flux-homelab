@@ -1,5 +1,5 @@
 namespace: infrastructure
 resources:
-  - metallb
+  #- metallb
   - contour
   #- cert-manager

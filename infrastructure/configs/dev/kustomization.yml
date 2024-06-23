@@ -12,11 +12,3 @@ patches:
         value:
           certificateRefs:
             - name: "dev.${domain}"
-  - target:
-      kind: IPAddressPool
-      name: pool
-    patch: |
-      - op: replace
-        path: /spec/addresses
-        value:
-          - 10.0.111.40/29

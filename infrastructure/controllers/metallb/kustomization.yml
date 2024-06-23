@@ -1,4 +1,6 @@
+namespace: infrastructure
 resources:
+  - namespace.yml
   - helm-repository.yml
   - helm-release.yml
   - image-policy.yml

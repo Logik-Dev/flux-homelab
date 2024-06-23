@@ -22,9 +22,54 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
+  name: metallb-controller
+  namespace: flux-system
+spec:
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/controllers/metallb
+  prune: true
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb-config
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: metallb-controller
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/configs/metallb
+  prune: true
+  wait: true
+  patches:
+  - target:
+      kind: IPAddressPool
+      name: pool
+    patch: |
+      - op: replace
+        path: /spec/addresses
+        value:
+          - 10.0.111.40/29
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
   name: infra-controllers
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: metallb-config 
   interval: 1h
   retryInterval: 1m
   timeout: 5m
@@ -42,19 +87,6 @@ spec:
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
-  # patches:
-  # - target:
-  #     kind: Gateway
-  #     name: traefik
-  #   patch: |
-  #     - op: replace  
-  #       path: /spec/listeners/0/hostname
-  #       value: "*.dev.${domain}"
-  #     - op: add
-  #       path: /spec/listeners/0/tls
-  #       value:
-  #         certificateRefs:
-  #           - name: "dev.${domain}"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -62,8 +94,8 @@ metadata:
   name: infra-configs
   namespace: flux-system
 spec:
-  #dependsOn:
-  #  - name: infra-controllers
+  dependsOn:
+    - name: infra-controllers
   interval: 1h
   retryInterval: 1m
   timeout: 5m
