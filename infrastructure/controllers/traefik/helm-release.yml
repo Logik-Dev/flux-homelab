@@ -44,6 +44,6 @@ spec:
         kubernetesCRD:
           allowCrossNamespace: true
           allowExternalNameServices: true
-      service:
-        spec:
-          loadBalancerIP: 10.0.111.40
+      #service:
+      #  spec:
+      #    loadBalancerIP: 10.0.111.40
