@@ -1,3 +1,2 @@
 resources:
-  - gateway-class.yml
   - gateway.yml
