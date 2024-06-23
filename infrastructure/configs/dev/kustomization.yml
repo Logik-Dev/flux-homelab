@@ -1,7 +1,17 @@
 resources:
   - ../base
 patches:
-
+  - target:
+      kind: Gateway
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "*.dev.${domain}"
+      - op: add
+        path: /spec/listeners/0/tls
+        value:
+          certificateRefs:
+            - name: "dev.${domain}"
   - target:
       kind: IPAddressPool
       name: pool
