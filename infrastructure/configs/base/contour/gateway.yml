@@ -3,7 +3,6 @@ kind: Gateway
 apiVersion: gateway.networking.k8s.io/v1
 metadata:
   name: contour
-  namespace: projectcontour
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:

@@ -6,10 +6,10 @@ metadata:
 spec:
   parentRefs:
     - name: contour
-      namespace: projectcontour
+      namespace: infrastructure
       sectionName: external-https
     - name: contour
-      namespace: projectcontour
+      namespace: infrastructure
       sectionName: internal-https
   rules:
     - backendRefs:

@@ -1,4 +1,23 @@
 resources:
-  - metallb
-  - ../base/cert-manager
-  - contour
+  - ../base
+patches:
+  - target:
+      kind: Gateway
+      name: contour
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "*.dev.${domain}"
+      - op: add
+        path: /spec/listeners/0/tls
+        value:
+          certificateRefs:
+            - name: "dev.${domain}"
+  - target:
+      kind: IPAddressPool
+      name: pool
+    patch: |
+      - op: replace
+        path: /spec/addresses
+        value:
+          - 10.0.111.40/29

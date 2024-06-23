@@ -1,3 +1,4 @@
 namespace: infrastructure
 resources:
-  - alert
+  - nfs-provisioner
+  - ddns

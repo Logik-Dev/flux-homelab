@@ -1,4 +1,24 @@
+namespace: infrastructure
 resources:
-  - metallb
-  - ../base/cert-manager
-  - contour
+  - ../base
+patches:
+  - target:
+      kind: Gateway
+      name: contour
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "*.prod.${domain}"
+      - op: add
+        path: /spec/listeners/0/tls
+        value:
+          certificateRefs:
+            - name: "prod.${domain}"
+  - target:
+      kind: IPAddressPool
+      name: pool
+    patch: |
+      - op: replace
+        path: /spec/addresses
+        value:
+         - 10.0.222.40/29

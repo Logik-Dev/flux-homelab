@@ -1,6 +1,5 @@
 namespace: infrastructure
 resources:
-  - namespace.yml
   - metallb
   - contour
   - cert-manager

@@ -1,5 +1,6 @@
 ---
-namespace: projectcontour
 resources:
-  - https://projectcontour.io/quickstart/contour-gateway-provisioner.yaml
-
+  - helm-repository.yml
+  - helm-release.yml
+  - image-policy.yml
+  - image-repository.yml

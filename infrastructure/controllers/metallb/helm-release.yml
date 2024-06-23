@@ -1,0 +1,23 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: metallb
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: metallb
+      sourceRef:
+        kind: HelmRepository
+        name: metallb
+      interval: 10m
+  values:
+    controller:
+      image:
+        repository: quay.io/metallb/controller # {"$imagepolicy": "infrastructure:metallb-controller:name"}
+        tag: v0.14.4 # {"$imagepolicy": "infrastructure:metallb-controller:tag"}
+    speaker:
+      image:
+        repository: quay.io/metallb/speaker # {"$imagepolicy": "infrastructure:metallb-speaker:name"}
+        tag: v0.14.4 # {"$imagepolicy": "infrastructure:metallb-speaker:tag"}

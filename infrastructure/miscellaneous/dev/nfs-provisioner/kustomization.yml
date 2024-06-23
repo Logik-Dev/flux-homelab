@@ -1,8 +1,0 @@
----
-namespace: nfs-provisioner
-resources:
-  - ../../base/nfs-provisioner
-secretGenerator:
-  - name: fast-nfs-values
-    files: 
-      - values.yaml=fast-nfs-values.yml

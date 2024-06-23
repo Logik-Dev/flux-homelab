@@ -1,3 +1,7 @@
+namespace: infrastructure
 resources:
-  - ../base/ddns
-  - nfs-provisioner
+  - ../base
+secretGenerator:
+  - name: fast-nfs-values
+    files: 
+      - values.yaml=fast-nfs-values.yml

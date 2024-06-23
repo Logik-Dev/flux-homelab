@@ -2,7 +2,6 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: cloudflare-token
-    namespace: cert-manager
 stringData:
     token: ENC[AES256_GCM,data:jh9eR1WLLn67RcfDGpqop3jvWFRuRnZbb5Iry7LUyma1cb8ILNjEyw==,iv:4Yq/V0sV87AJt1cxOrzYG/ykVRBQSF7NhTJprhftIe0=,tag:9gaDSh/pthO0RiCxwt4O+g==,type:str]
 type: Opaque

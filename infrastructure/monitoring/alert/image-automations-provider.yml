@@ -2,7 +2,6 @@ apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
   name: image-automations-provider
-  namespace: monitoring
 spec:
   type: slack
   channel: image-automations

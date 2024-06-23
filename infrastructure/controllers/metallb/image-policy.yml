@@ -1,0 +1,21 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: metallb-controller
+spec:
+  imageRepositoryRef:
+    name: metallb-controller
+  policy:
+    semver: 
+      range: v0.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: metallb-speaker
+spec:
+  imageRepositoryRef:
+    name: metallb-speaker
+  policy:
+    semver: 
+      range: v0.x

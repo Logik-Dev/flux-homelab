@@ -2,7 +2,6 @@ apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Provider
 metadata:
   name: slack-errors-provider
-  namespace: monitoring
 spec:
   type: slack
   channel: flux-system-errors

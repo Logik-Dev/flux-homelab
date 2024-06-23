@@ -1,0 +1,16 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: bitnami-contour
+spec:
+  image: docker.io/bitnami/contour
+  interval: 5m
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: bitnami-envoy
+spec:
+  image: docker.io/bitnami/envoy
+  interval: 5m
