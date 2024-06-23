@@ -3,7 +3,7 @@ resources:
 patches:
   - target:
       kind: Gateway
-      name: contour
+      name: traefik
     patch: |
       - op: replace  
         path: /spec/listeners/0/hostname
