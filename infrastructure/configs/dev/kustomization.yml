@@ -12,3 +12,6 @@ patches:
         value:
           certificateRefs:
             - name: "dev.${domain}"
+      - op: replace
+        path: /spec/listeners/1/hostname
+        value: "*.${domain}"

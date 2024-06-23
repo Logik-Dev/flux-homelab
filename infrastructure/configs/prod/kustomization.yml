@@ -9,3 +9,17 @@ patches:
         path: /spec/addresses
         value:
          - 10.0.222.40/29
+  - target:
+      kind: Gateway
+    patch: |
+      - op: replace  
+        path: /spec/listeners/0/hostname
+        value: "*.prod.${domain}"
+      - op: add
+        path: /spec/listeners/0/tls
+        value:
+          certificateRefs:
+            - name: "prod.${domain}"
+      - op: replace
+        path: /spec/listeners/1/hostname
+        value: "*.${domain}"

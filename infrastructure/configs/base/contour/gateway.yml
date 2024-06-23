@@ -27,7 +27,7 @@ spec:
           from: All
     # external
     - name: external-https
-      hostname: "*.${domain}"
+      hostname: "replaced.by.env"
       port: 444
       protocol: HTTPS
       tls:
