@@ -1,0 +1,48 @@
+---
+# Add Traefik Helm Repository
+- name: Add traefik helm repository
+  kubernetes.core.helm_repository:
+    name: traefik
+    repo_url: https://traefik.github.io/charts
+
+# Deploy traefik
+- name: Deploy traefik
+  kubernetes.core.helm:
+    name: traefik
+    chart_ref: traefik/traefik
+    release_namespace: traefik
+    create_namespace: true
+    wait: true
+    values:
+      image:
+        tag: '{{ traefik_version }}'
+      deployment:
+        replicas: 3
+      additionalArguments:
+        - --log.level=INFO
+        - --entryPoints.internal.address=:443/tcp
+        - --entryPoints.external.address=:444/tcp
+      ports:
+        web:
+          port: 80
+          redirectTo:
+            port: internal
+        websecure:
+          expose:
+            default: false
+          exposedPort: 445
+        internal:
+          port: 443
+          expose:
+            default: true
+          exposed: true
+          exposedPort: 443
+        external:
+          port: 444
+          expose:
+            default: true
+          exposedPort: 444
+      providers:
+        kubernetesCRD:
+          allowCrossNamespace: true
+          allowExternalNameServices: true

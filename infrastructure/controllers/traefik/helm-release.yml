@@ -27,6 +27,7 @@ spec:
         redirectTo:
           port: internal
       websecure:
+        port: 8445
         expose:
           default: false
         exposedPort: 445
