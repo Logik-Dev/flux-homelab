@@ -13,13 +13,13 @@ spec:
         name: metallb
       interval: 10m
   values:
-    frr:
-      enabled: false
     controller:
       image:
         repository: quay.io/metallb/controller # {"$imagepolicy": "infrastructure:metallb-controller:name"}
         tag: v0.14.4 # {"$imagepolicy": "infrastructure:metallb-controller:tag"}
     speaker:
+      frr:
+        enabled: false
       image:
         repository: quay.io/metallb/speaker # {"$imagepolicy": "infrastructure:metallb-speaker:name"}
         tag: v0.14.4 # {"$imagepolicy": "infrastructure:metallb-speaker:tag"}
