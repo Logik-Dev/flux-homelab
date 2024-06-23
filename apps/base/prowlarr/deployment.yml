@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prowlarr
+spec:
+  selector:
+    matchLabels:
+      app: prowlarr
+  template:
+    metadata:
+      labels:
+        app: prowlarr
+    spec:
+      containers:
+        - name: prowlarr
+          image: lscr.io/linuxserver/prowlarr:1.18.0.4543-ls74 # {"$imagepolicy": "apps:prowlarr"}
+          ports:
+            - containerPort: 9696
+              name: http
+          volumeMounts:
+            - mountPath: /config
+              name: fast-nfs
+            - mountPath: /slow-nfs
+              name: slow-nfs
+          envFrom:
+            - configMapRef:
+                name: common-env
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 512Mi
+      volumes:
+        - name: fast-nfs
+          persistentVolumeClaim:
+            claimName: prowlarr
+        - name: slow-nfs
+          persistentVolumeClaim:
+            claimName: slow-nfs
+

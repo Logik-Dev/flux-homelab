@@ -1,0 +1,12 @@
+---
+# service
+apiVersion: v1
+kind: Service
+metadata:
+  name: prowlarr
+spec:
+  selector:
+    app: prowlarr
+  ports:
+    - port: 80
+      targetPort: http
