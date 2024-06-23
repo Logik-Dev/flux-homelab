@@ -1,8 +1,9 @@
 namespace: infrastructure
 resources:
+  #- github.com/metallb/metallb/config/native?ref=v0.14.5
   - namespace.yml
   - https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
-  - metallb
-  - traefik
+  #- metallb
+  #- traefik
   #- gateway.yml
   #- cert-manager
