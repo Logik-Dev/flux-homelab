@@ -15,7 +15,7 @@ spec:
   values:
       image:
         repository: traefik
-        tag: 3.0.1
+        tag: 3.0.2
       additionalArguments:
         - --log.level=INFO
         - --entryPoints.internal.address=:443/tcp
