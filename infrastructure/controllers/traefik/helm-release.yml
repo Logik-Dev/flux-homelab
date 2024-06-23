@@ -13,6 +13,9 @@ spec:
         name: traefik
       interval: 10m
   values:
+    image:
+      repository: traefik   # {"$imagepolicy": "infrastructure:traefik:name"}
+      tag: 3.0.1            # {"$imagepolicy": "infrastructure:traefik:tag"}
     experimental:
       kubernetesGateway:
         enabled: true

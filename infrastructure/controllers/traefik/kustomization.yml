@@ -1,3 +1,5 @@
 resources:
   - helm-repository.yml
   - helm-release.yml
+  - image-repository.yml
+  - image-policy.yml
