@@ -4,5 +4,5 @@ resources:
   - github.com/metallb/metallb/config/native?ref=v0.14.5
   #- metallb
   - traefik
-  #- gateway.yml
+  - gateway.yml
   #- cert-manager
