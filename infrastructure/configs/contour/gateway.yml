@@ -28,7 +28,7 @@ spec:
     # external
     - name: external-https
       hostname: "replaced.by.env"
-      port: 444
+      port: 8444
       protocol: HTTPS
       tls:
         mode: Terminate
