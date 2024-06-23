@@ -45,4 +45,5 @@ spec:
           allowCrossNamespace: true
           allowExternalNameServices: true
       service:
-        loadBalancerIP: 10.0.111.40
+        spec:
+          loadBalancerIP: 10.0.111.40
