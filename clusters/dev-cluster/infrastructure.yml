@@ -49,7 +49,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/configs/metallb
+  path: ./infrastructure/configs/base/metallb
   prune: true
   wait: true
   patches:
