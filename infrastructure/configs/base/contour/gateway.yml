@@ -1,13 +1,19 @@
 ---
+kind: GatewayClass
+apiVersion: gateway.networking.k8s.io/v1
+metadata:
+  name: contour
+spec:
+  controllerName: projectcontour.io/gateway-controller
+---
 kind: Gateway
 apiVersion: gateway.networking.k8s.io/v1
 metadata:
-  name: traefik
-  namespace: infrastructure
+  name: contour
   annotations:
     cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:
-  gatewayClassName: traefik
+  gatewayClassName: contour
   listeners:    
     # internal
     - name: internal-https
