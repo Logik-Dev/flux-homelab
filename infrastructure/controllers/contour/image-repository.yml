@@ -1,0 +1,8 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: traefik
+spec:
+  image: docker.io/traefik
+  interval: 5m
