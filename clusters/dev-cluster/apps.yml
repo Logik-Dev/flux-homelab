@@ -21,6 +21,8 @@ spec:
     secretRef:
       name: sops-age
   postBuild:
+    substitute:
+      quote: '"'
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
