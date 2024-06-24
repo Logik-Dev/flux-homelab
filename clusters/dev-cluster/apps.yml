@@ -23,6 +23,7 @@ spec:
   postBuild:
     substitute:
       quote: '"'
+      env: dev
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets

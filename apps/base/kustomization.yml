@@ -9,3 +9,4 @@ resources:
   - sonarr
   - torrent
   - nextcloud
+  - home-assistant
