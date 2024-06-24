@@ -3,6 +3,7 @@ resources:
   - ../base
 patches:
   - path: patch_wg_service.yml
+  # vaultwarden
   - target:
       kind: HTTPRoute
       name: vaultwarden
@@ -12,6 +13,7 @@ patches:
         value:
           - "vaultwarden.${domain}" 
           - "vaultwarden.dev.${domain}" 
+  # prowlarr
   - target:
       kind: HTTPRoute
       name: prowlarr
@@ -20,3 +22,12 @@ patches:
         path: /spec/hostnames
         value:
           - "prowlarr.dev.${domain}"
+  # radarr
+  - target:
+      kind: HTTPRoute
+      name: radarr
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "radarr.dev.${domain}"

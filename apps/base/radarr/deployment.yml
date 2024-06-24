@@ -1,0 +1,44 @@
+---
+# deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+spec:
+  selector:
+    matchLabels:
+      app: radarr
+  template:
+    metadata:
+      labels:
+        app: radarr
+    spec:
+      containers:
+        - name: radarr
+          image: lscr.io/linuxserver/radarr:5.6.0.8846-ls224 # {"$imagepolicy": "apps:radarr"}
+          ports:
+            - containerPort: 7878
+              name: http
+          volumeMounts:
+            - mountPath: /config
+              name: fast-nfs
+            - mountPath: /slow-nfs
+              name: slow-nfs
+          envFrom:
+            - configMapRef:
+                name: common-env
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+      volumes:
+        - name: fast-nfs
+          persistentVolumeClaim:
+            claimName: radarr
+        - name: slow-nfs
+          persistentVolumeClaim:
+            claimName: slow-nfs
+
