@@ -3,3 +3,68 @@ resources:
   - ../base
 patches:
   - path: patch_wg_service.yml
+  # vaultwarden
+  - target:
+      kind: HTTPRoute
+      name: vaultwarden
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "vaultwarden.${domain}" 
+          - "vaultwarden.${env}.${domain}" 
+  # prowlarr
+  - target:
+      kind: HTTPRoute
+      name: prowlarr
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "prowlarr.${env}.${domain}"
+  # radarr
+  - target:
+      kind: HTTPRoute
+      name: radarr
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "radarr.${env}.${domain}"
+  # sonarr
+  - target:
+      kind: HTTPRoute
+      name: sonarr
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "sonarr.${env}.${domain}"
+  # torrent
+  - target:
+      kind: HTTPRoute
+      name: torrent
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "torrent.${env}.${domain}"
+  # nextcloud
+  - target:
+      kind: HTTPRoute
+      name: nextcloud
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "nextcloud.${domain}" 
+          - "nextcloud.${env}.${domain}" 
+   # home-assistant
+  - target:
+      kind: HTTPRoute
+      name: home-assistant
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "home.${env}.${domain}" 
