@@ -19,6 +19,13 @@ spec:
           envFrom:
             - secretRef:
                 name: wireguard-secret
+          env:
+            - name: BLOCK_MALICIOUS
+              value: off
+            - name: DNS_ADDRESS
+              value: 1.1.1.1
+            - name: DOT
+              value: off
           volumeMounts:
             - mountPath: /gluetun
               name: gluetun
