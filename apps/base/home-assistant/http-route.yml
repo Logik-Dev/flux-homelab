@@ -10,5 +10,5 @@ spec:
       sectionName: internal-https
   rules:
     - backendRefs:
-        - name: nextcloud
+        - name: home-assistant 
           port: 80
