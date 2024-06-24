@@ -1,4 +1,3 @@
----
 # deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -16,7 +15,7 @@ spec:
       containers:
         # wireguard vpn
         - name: gluetun
-          image: qmcgaw/gluetun:v3.37.0 # {"$imagepolicy": "apps:gluetun"}
+          image: qmcgaw/gluetun:v3.38.0 # {"$imagepolicy": "apps:gluetun"}
           envFrom:
             - secretRef:
                 name: wireguard-secret
