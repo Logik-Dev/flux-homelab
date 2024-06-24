@@ -26,10 +26,8 @@ spec:
               value: 1.1.1.1
             - name: DOT
               value: off
-            - name: VPN_PORT_FORWARDING
-              value: on
-            - name: VPN_PORT_FORWARDING_LISTENING_PORT
-              value: '47594'
+            - name: HEALTH_TARGET_ADDRESS
+              value: 192.168.21.168
           volumeMounts:
             - mountPath: /gluetun
               name: gluetun
