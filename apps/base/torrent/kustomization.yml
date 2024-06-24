@@ -8,3 +8,7 @@ resources:
   - http-route.yml
   - image-repository.yml
   - image-policy.yml
+configMapGenerator:
+  - name: gluetun-env
+    envs:
+    - .env
