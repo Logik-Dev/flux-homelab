@@ -1,0 +1,13 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: flaresolverr
+spec:
+  imageRepositoryRef:
+    name: flaresolverr
+  filterTags:
+    pattern: '^v(?P<semver>3\.[0-9]*\.[0-9]*)'
+    extract: '$semver'
+  policy:
+    range: 
+      semver: 3.x

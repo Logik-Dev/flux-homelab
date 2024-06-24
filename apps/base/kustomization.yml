@@ -4,3 +4,4 @@ resources:
   - wireguard
   - vaultwarden
   - prowlarr
+  - flaresolverr
