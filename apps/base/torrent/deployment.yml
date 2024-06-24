@@ -22,6 +22,8 @@ spec:
           volumeMounts:
             - mountPath: /gluetun
               name: gluetun
+            - mountPath: /dev/net/tun
+              name: tun
           securityContext:
             capabilities:
               add: [NET_ADMIN, NET_RAW]
@@ -58,6 +60,9 @@ spec:
               cpu: 300m
               memory: 1Gi
       volumes:
+        - name: tun
+          hostPath:
+            path: /dev/net/tun
         - name: gluetun
           persistentVolumeClaim:
             claimName: gluetun
