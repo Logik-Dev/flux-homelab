@@ -1,6 +1,11 @@
 namespace: apps
 resources:
   - ../base
+configMapGenerator:
+  - name: torrent-env
+    behavior: merge
+    envs:
+    - .torrent.env
 patches:
   # wireguard
   - path: patch_wg_service.yml
@@ -42,7 +47,7 @@ patches:
         value:
           - "sonarr.dev.${domain}"
   # torrent
-  - path: torrent-cm.yml
+  #- path: torrent-cm.yml
   - target:
       kind: HTTPRoute
       name: torrent
