@@ -1,4 +1,3 @@
----
 # deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
         - name: radarr
-          image: lscr.io/linuxserver/radarr:5.6.0.8846-ls224 # {"$imagepolicy": "apps:radarr"}
+          image: lscr.io/linuxserver/radarr:5.7.0.8882-ls226 # {"$imagepolicy": "apps:radarr"}
           ports:
             - containerPort: 7878
               name: http
@@ -41,4 +40,3 @@ spec:
         - name: slow-nfs
           persistentVolumeClaim:
             claimName: slow-nfs
-
