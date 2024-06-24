@@ -47,7 +47,6 @@ patches:
         value:
           - "sonarr.dev.${domain}"
   # torrent
-  #- path: torrent-cm.yml
   - target:
       kind: HTTPRoute
       name: torrent
@@ -56,3 +55,13 @@ patches:
         path: /spec/hostnames
         value:
           - "torrent.dev.${domain}"
+  # nextcloud
+  - target:
+      kind: HTTPRoute
+      name: nextcloud
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "nextcloud.${domain}" 
+          - "nextcloud.dev.${domain}" 
