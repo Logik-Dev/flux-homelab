@@ -17,6 +17,8 @@ spec:
         - name: gluetun
           image: qmcgaw/gluetun:v3.38.0 # {"$imagepolicy": "apps:gluetun"}
           envFrom:
+            - configMapRef:
+                name: common-env
             - secretRef:
                 name: wireguard-secret
           env:
@@ -28,10 +30,12 @@ spec:
               value: off
             - name: HEALTH_TARGET_ADDRESS
               value: 1.1.1.1
+            - name: HEALTH_SUCCESS_WAIT_DURATION
+              value: 1s
             - name: HEALTH_VPN_DURATION_INITIAL
               value: '20s'
-            - name: PUBLICIP_PERIOD
-              value: '0'
+            - name: WIREGUARD_IMPLEMENTATION
+              value: userspace
           volumeMounts:
             - mountPath: /gluetun
               name: gluetun
@@ -39,7 +43,7 @@ spec:
               name: tun
           securityContext:
             capabilities:
-              add: [NET_ADMIN, NET_RAW]
+              add: [NET_ADMIN]
           resources:
             requests:
               memory: 128Mi
