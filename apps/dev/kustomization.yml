@@ -31,3 +31,12 @@ patches:
         path: /spec/hostnames
         value:
           - "radarr.dev.${domain}"
+  # sonarr
+  - target:
+      kind: HTTPRoute
+      name: sonarr
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "sonarr.dev.${domain}"

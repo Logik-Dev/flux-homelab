@@ -1,0 +1,42 @@
+# deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+spec:
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      containers:
+        - name: sonarr
+          image: lscr.io/linuxserver/sonarr:4.0.5.1710-ls241
+          ports:
+            - containerPort: 8989
+              name: http
+          volumeMounts:
+            - mountPath: /config
+              name: fast-nfs
+            - mountPath: /slow-nfs
+              name: slow-nfs
+          envFrom:
+            - configMapRef:
+                name: common-env
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 512Mi
+      volumes:
+        - name: fast-nfs
+          persistentVolumeClaim:
+            claimName: sonarr
+        - name: slow-nfs
+          persistentVolumeClaim:
+            claimName: slow-nfs

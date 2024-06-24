@@ -1,0 +1,12 @@
+---
+# service
+apiVersion: v1
+kind: Service
+metadata:
+  name: sonarr
+spec:
+  selector:
+    app: sonarr
+  ports:
+    - port: 80
+      targetPort: http
