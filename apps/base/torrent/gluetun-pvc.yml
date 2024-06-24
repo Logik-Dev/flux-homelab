@@ -1,0 +1,12 @@
+---
+# gluetun pvc
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gluetun
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: fast-nfs

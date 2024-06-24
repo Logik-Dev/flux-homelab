@@ -2,6 +2,7 @@ namespace: apps
 resources:
   - ../base
 patches:
+  # wireguard
   - path: patch_wg_service.yml
   # vaultwarden
   - target:
@@ -40,3 +41,13 @@ patches:
         path: /spec/hostnames
         value:
           - "sonarr.dev.${domain}"
+  # torrent
+  - path: torrent-cm.yml
+  - target:
+      kind: HTTPRoute
+      name: torrent
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "torrent.dev.${domain}"

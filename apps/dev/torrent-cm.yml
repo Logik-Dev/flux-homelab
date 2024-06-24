@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: torrent-env
+data:
+  FIREWALL_OUTBOUND_SUBNETS: 10.0.111.0/16,192.168.0.0/16

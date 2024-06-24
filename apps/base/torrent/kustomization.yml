@@ -1,0 +1,10 @@
+resources:
+  - torrent-pvc.yml
+  - gluetun-pvc.yml
+  - cm.yml
+  - secret.yml
+  - deployment.yml
+  - service.yml
+  - http-route.yml
+  - image-repository.yml
+  - image-policy.yml
