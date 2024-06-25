@@ -43,7 +43,7 @@ spec:
       port: 8443
       protocol: HTTPS
       tls:
-        mode: Passtrough
+        mode: Passthrough
         certificateRefs:
           - name: ${env}.${domain}
       allowedRoutes:
