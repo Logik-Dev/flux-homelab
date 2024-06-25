@@ -7,8 +7,8 @@ spec:
   parentRefs:
     - name: traefik
       namespace: infrastructure 
-      sectionName: internal-https
+      sectionName: passtrough-internal
   rules:
     - backendRefs:
-        - name: torrent
+        - name: unifi
           port: 8443
