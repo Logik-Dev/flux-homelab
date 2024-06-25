@@ -7,7 +7,7 @@ spec:
   parentRefs:
     - name: traefik
       namespace: infrastructure 
-      sectionName: passtrough-internal
+      sectionName: internal-https
   rules:
     - backendRefs:
         - name: unifi

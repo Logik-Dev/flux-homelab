@@ -37,15 +37,3 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    # passtrough internal
-    - name: passtrough-internal
-      hostname: "unifi.dev.${domain}"
-      port: 8443
-      protocol: HTTPS
-      tls:
-        mode: Passthrough
-        certificateRefs:
-          - name: ${env}.${domain}
-      allowedRoutes:
-        namespaces:
-          from: All
