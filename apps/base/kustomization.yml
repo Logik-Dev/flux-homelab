@@ -10,3 +10,4 @@ resources:
   - torrent
   - nextcloud
   - home-assistant
+  - unifi

@@ -1,0 +1,6 @@
+resources:
+  - pvc.yml
+  - unifi-db-secret.yml
+  - init-db-secret.yml
+  - deployment.yml
+  - service.yml

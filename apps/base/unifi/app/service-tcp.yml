@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-tcp
+  annotations:
+    metallb.universe.tf/allow-shared-ip: 'true'
+spec:
+  ports:
+    - port: 8443
+      targetPort: 8443
+      name: web
+      protocol: TCP
+    - port: 8080
+      targetPort: 8080
+      name: api
+      protocol: TCP
+  selector:
+    app: unifi
+  type: LoadBalancer

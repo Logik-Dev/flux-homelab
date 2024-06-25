@@ -1,0 +1,6 @@
+resources:
+  - pvc.yml
+  - deployment.yml
+  - service-tcp.yml
+  - service-udp.yml
+  - http-route.yml

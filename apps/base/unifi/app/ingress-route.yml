@@ -1,0 +1,23 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: unifi
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  entryPoints: [internal]
+  routes:
+    - kind: Rule
+      match: Host(`unifi.${env}.${domain}`)
+      services:
+        - kind: Service
+          name: unifi-tcp
+          namespace: unifi
+          port: 8443
+          scheme: https
+          serversTransport: unifi
+  tls:
+    secretName: ${env}.${domain}
+    domains:
+      - main: unifi.${env}.{domain}

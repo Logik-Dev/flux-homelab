@@ -59,7 +59,7 @@ patches:
         value:
           - "nextcloud.${domain}" 
           - "nextcloud.${env}.${domain}" 
-   # home-assistant
+  # home-assistant
   - target:
       kind: HTTPRoute
       name: home-assistant
@@ -67,4 +67,28 @@ patches:
       - op: add
         path: /spec/hostnames
         value:
-          - "home.${env}.${domain}" 
+          - "home.${env}.${domain}"
+  # unifi-tcp
+  - target:
+      kind: Service
+      name: unifi-tcp
+    patch: |
+      - op: add
+        path: /spec/loadBalancerIP
+        value: 10.0.111.45
+  - target:
+      kind: HTTPRoute
+      name: unifi
+    patch: |
+      - op: add
+        path: /spec/hostnames
+        value:
+          - "unifi.${env}.${domain}"
+  # unifi-udp
+  - target:
+      kind: Service
+      name: unifi-udp
+    patch: |
+      - op: add
+        path: /spec/loadBalancerIP
+        value: 10.0.111.45

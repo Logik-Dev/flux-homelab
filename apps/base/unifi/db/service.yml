@@ -1,0 +1,12 @@
+---
+# service
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-db
+spec:
+  selector:
+    app: unifi-db
+  ports:
+    - port: 27017
+      targetPort: 27017
