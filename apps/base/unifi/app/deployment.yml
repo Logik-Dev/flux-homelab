@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,7 +13,7 @@ spec:
     spec:
       containers:
         - name: unifi
-          image: lscr.io/linuxserver/unifi-network-application:8.2.93-ls49 # {"$imagepolicy": "apps:unifi"}
+          image: lscr.io/linuxserver/unifi-network-application:8.2.93-ls50 # {"$imagepolicy": "apps:unifi"}
           ports:
             - containerPort: 8443
               protocol: TCP
