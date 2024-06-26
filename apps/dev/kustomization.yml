@@ -77,13 +77,13 @@ patches:
         path: /spec/loadBalancerIP
         value: 10.0.111.45
   - target:
-      kind: HTTPRoute
+      kind: IngressRoute
       name: unifi
     patch: |
       - op: add
-        path: /spec/hostnames
+        path: /metadata/namespace
         value:
-          - "unifi.${env}.${domain}"
+          - "infrastructure"
   # unifi-udp
   - target:
       kind: Service

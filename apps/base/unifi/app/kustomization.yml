@@ -5,3 +5,5 @@ resources:
   - service-udp.yml
   - server-transport.yml
   - ingress-route.yml
+  - image-repository.yml
+  - image-policy.yml

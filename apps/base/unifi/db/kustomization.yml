@@ -4,3 +4,5 @@ resources:
   - init-db-secret.yml
   - deployment.yml
   - service.yml
+  - image-repository.yml
+  - image-policy.yml

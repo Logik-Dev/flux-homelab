@@ -7,13 +7,14 @@ metadata:
     cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:
   entryPoints: 
-    - internal-https
+    - internal
   routes:
     - kind: Rule
       match: Host(`unifi.${env}.${domain}`)
       services:
         - kind: Service
           name: unifi-tcp
+          namespace: apps
           port: 8443
           scheme: https
           serversTransport: unifi

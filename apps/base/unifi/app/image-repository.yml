@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: unifi
+spec:
+  image: lscr.io/linuxserver/unifi-network-application
+  interval: 24h

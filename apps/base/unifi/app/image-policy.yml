@@ -1,0 +1,13 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: unifi
+spec:
+  imageRepositoryRef:
+    name: unifi
+  filterTags:
+    pattern: '^(?P<semver>8\.[0-9]*\.[0-9]*)-ls(?P<tag>[0-9]*)'
+    extract: '$tag'
+  policy:
+    numerical: 
+      order: asc
