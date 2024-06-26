@@ -3,6 +3,5 @@ resources:
   - deployment.yml
   - service-tcp.yml
   - service-udp.yml
-  - http-route.yml
   - server-transport.yml
   - ingress-route.yml
