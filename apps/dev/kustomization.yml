@@ -82,8 +82,7 @@ patches:
     patch: |
       - op: add
         path: /metadata/namespace
-        value:
-          - "infrastructure"
+        value: infrastructure
   # unifi-udp
   - target:
       kind: Service
