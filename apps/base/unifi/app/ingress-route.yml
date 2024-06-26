@@ -4,20 +4,20 @@ kind: IngressRoute
 metadata:
   name: unifi
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: cloudflare-issuer
 spec:
-  entryPoints: [internal]
+  entryPoints: 
+    - internal-https
   routes:
     - kind: Rule
       match: Host(`unifi.${env}.${domain}`)
       services:
         - kind: Service
           name: unifi-tcp
-          namespace: unifi
           port: 8443
           scheme: https
           serversTransport: unifi
   tls:
-    secretName: ${env}.${domain}
+    secretName: "${env}.${domain}"
     domains:
-      - main: unifi.${env}.{domain}
+      - main: "*.${env}.${domain}"
