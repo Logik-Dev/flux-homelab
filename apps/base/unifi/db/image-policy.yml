@@ -6,7 +6,7 @@ spec:
   imageRepositoryRef:
     name: mongo-db
   filterTags:
-    pattern: '^(?P<semver>[0-9]*\.[0-9]*\.[0-9]*)-(?P<distro>[a-z]*)'
+    pattern: '^(?P<semver>[0-9]*\.[0-9]*\.[0-9]*)-jammy'
     extract: '$semver'
   policy:
     semver: 
