@@ -1,5 +1,6 @@
 namespace: crowdsec
 resources:
+  - namespace.yml
   - secret.yml
   - helm-repository.yml
   - helm-release.yml
