@@ -1,5 +1,8 @@
 ---
 creation_rules:
+  - path_regex: .*middleware.(yaml|yml)$
+    encrypted_regex: ^crowdsecLapiKey$
+    age: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
   - path_regex: .*values.(yaml|yml)$
     age: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
   - path_regex: .*\.(yaml|yml)

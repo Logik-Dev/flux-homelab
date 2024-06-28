@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+    name: bouncer
+spec:
+    plugin:
+        bouncer:
+            enabled: true
+            crowdsecMode: stream
+            crowdsecLapiScheme: https
+            crowdsecLapiHost: crowdsec-service.crowdsec:8080
+            crowdsecLapiKey: ENC[AES256_GCM,data:naj57NOGmdrxy0XWNnTJH+6dYZCy0qnWBca9sciLgZyEM80A,iv:DMISLPPKGWChHmYZ8tpab9nlYqigA9EMcNp3YyimIS4=,tag:92kqbRET1AxY0e8lu88f2A==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBaN0lrSk1GOEVTenpnWm12
+            RWVwOWdMUmwreFpkaTgxN2dybDBDSjNMU0JRClVDOVV6cDFHUVNUSkVVaEljck5X
+            cGRwNHNIVks5QWd4Mm02Y1R6dmd4VDgKLS0tIHJMd0hmYzE4VTh5b1h5OGY1aHFr
+            T2N0a0pnbjhOSDJJclRxR21MblhaZkkKBX5hIAuX8zKGNDnoS+uqYdsfwOCTQ02u
+            R0DvegSZVW5svQ0wfG6N0NQsegJJtIYD8Y+h7FmTZH0+ansOxc1tjg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-06-28T20:31:26Z"
+    mac: ENC[AES256_GCM,data:sh8+EJI+7imUpn0PhA8Yave/xePyYcYFxAeLMnrGw7qG55C8c8ZUk2kHB/zcgaW2rFd8/ovZyDC2MI2kaN5C3aNlbxSznfEzuZmiPzYqUALlFY0Lq+cZ2NwvipjaVx1vNbo5zu/CCxqH3hFqytaDAsfo6+OrAEU4d/9vswIO9fs=,iv:iLPHupyKR5bWJoie3r73K27FoNWavlRBBwmWwvEv8O0=,tag:9NFYvbqyaXAO6/+hKh1zSA==,type:str]
+    pgp: []
+    encrypted_regex: ^crowdsecLapiKey$
+    version: 3.8.1

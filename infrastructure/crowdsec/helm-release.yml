@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: crowdsec
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: crowdsec
+      sourceRef:
+        kind: HelmRepository
+        name: crowdsec
+      interval: 10m
+  values:
+    container_runtime: containerd
+    lapi:
+      persistentVolume:
+        data:
+          accessModes: ["ReadWriteOnce"]
+          enabled: true
+          size: 1Gi
+          storageClassName: "fast-nfs"
+        config:
+          accessModes: ["ReadWriteOnce"]
+          enabled: true
+          size: 1Gi
+          storageClassName: "fast-nfs"
+      envFrom:
+        - secretRef:
+            name: crowdsec
+    agent:
+      acquisition:
+        - namespace: infrastructure
+          podName: traefik-*
+          program: traefik
+    env:
+     - name: COLLECTIONS
+       value: crowdsecurity/traefik
