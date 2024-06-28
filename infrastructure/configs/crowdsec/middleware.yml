@@ -2,6 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
     name: bouncer
+    namespace: infrastructure
 spec:
     plugin:
         bouncer:
@@ -9,7 +10,7 @@ spec:
             crowdsecMode: stream
             crowdsecLapiScheme: https
             crowdsecLapiHost: crowdsec-service.crowdsec:8080
-            crowdsecLapiKey: ENC[AES256_GCM,data:naj57NOGmdrxy0XWNnTJH+6dYZCy0qnWBca9sciLgZyEM80A,iv:DMISLPPKGWChHmYZ8tpab9nlYqigA9EMcNp3YyimIS4=,tag:92kqbRET1AxY0e8lu88f2A==,type:str]
+            crowdsecLapiKey: ENC[AES256_GCM,data:IjUFzE7ChWkgMDb7EdJahHrRetR8d1btVVjq3PutAANSzOvW,iv:Z3ykPuKQVAg+xJ6ZGs2jD00/fNVNbscMqezactWvrV8=,tag:uGZP2a02xPIPRw0MwTm57g==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -19,14 +20,14 @@ sops:
         - recipient: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBaN0lrSk1GOEVTenpnWm12
-            RWVwOWdMUmwreFpkaTgxN2dybDBDSjNMU0JRClVDOVV6cDFHUVNUSkVVaEljck5X
-            cGRwNHNIVks5QWd4Mm02Y1R6dmd4VDgKLS0tIHJMd0hmYzE4VTh5b1h5OGY1aHFr
-            T2N0a0pnbjhOSDJJclRxR21MblhaZkkKBX5hIAuX8zKGNDnoS+uqYdsfwOCTQ02u
-            R0DvegSZVW5svQ0wfG6N0NQsegJJtIYD8Y+h7FmTZH0+ansOxc1tjg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB2K2d0MFV6WW10djdVWlhi
+            czJPbm9pcmdpMXc3Z0daZW0yZXozTDIrcVJjCkdVTzBjcDNnZEZXUGZXNjVLQytQ
+            dWJIK0JjSk5ldGJPeXdENmdNUGVocFUKLS0tIGtNd3RKR1FWeENNVHR0MEp0TjJm
+            K29SS2Y2a2RJREU4ZkFuWHdJN096bFUK/Y4awvsALw+7OyEQZvKDyCl3Baif5dPC
+            ZaVFIPdMRpUkYZxzRuWDdbUJEajYfd9r7Aqq5bqHyM2WvOzKNxYVEA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-28T20:31:26Z"
-    mac: ENC[AES256_GCM,data:sh8+EJI+7imUpn0PhA8Yave/xePyYcYFxAeLMnrGw7qG55C8c8ZUk2kHB/zcgaW2rFd8/ovZyDC2MI2kaN5C3aNlbxSznfEzuZmiPzYqUALlFY0Lq+cZ2NwvipjaVx1vNbo5zu/CCxqH3hFqytaDAsfo6+OrAEU4d/9vswIO9fs=,iv:iLPHupyKR5bWJoie3r73K27FoNWavlRBBwmWwvEv8O0=,tag:9NFYvbqyaXAO6/+hKh1zSA==,type:str]
+    lastmodified: "2024-06-28T22:10:39Z"
+    mac: ENC[AES256_GCM,data:Y2ac6t/wXJAK/F9iD532PN3hG4RfztUq1BFno0yS/41JSqM+AzVZyjP1rllkfl13DEegrfDMGP5EaKelJW1SxRBHPhAqDeQvrNEWu0awvRnkArmxhipa2Z9/slecBzgMNSieCeKSY+hUdG9eYL/L/sRrTVkcjLciYlmYziE9UA0=,iv:w8qQofnVHcFhXIY8iI6g+xhukvZeoy5Gdky6BLDGBwc=,tag:qCBWnOm9AIWFWjxutafzWg==,type:str]
     pgp: []
     encrypted_regex: ^crowdsecLapiKey$
     version: 3.8.1
