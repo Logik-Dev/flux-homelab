@@ -73,7 +73,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: metallb-config 
+    - name: infra-crowdsec 
   interval: 1h
   retryInterval: 15s
   timeout: 5m
@@ -173,7 +173,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: infra-controllers
+    - name: metallb-config
   interval: 1h
   retryInterval: 1m
   timeout: 5m
