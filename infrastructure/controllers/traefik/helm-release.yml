@@ -19,13 +19,16 @@ spec:
     experimental:
       plugins:
         enabled: true
+        crowdsec-bouncer-traefik-plugin:
+          moduleName: "github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
+          version: "v1.3.2"
       kubernetesGateway:
         enabled: true
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
-      - '--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin'
-      - '--experimental.plugins.bouncer.version=v1.1.7'
+      #- '--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin'
+      #- '--experimental.plugins.bouncer.version=v1.1.7'
       - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
