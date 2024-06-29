@@ -33,9 +33,9 @@ spec:
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
-      - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
-      - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
-      - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
+     # - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
+     # - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
+     # - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.external.http.middlewares=traefik-bouncer@kubernetescrd
       - --providers.kubernetescrd
     service:
