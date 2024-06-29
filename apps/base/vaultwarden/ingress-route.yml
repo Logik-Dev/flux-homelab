@@ -1,0 +1,20 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: vaultwarden
+spec:
+  entryPoints: 
+    - external
+  routes:
+    - kind: Rule
+      match: Host(`vaultwarden.${domain}`)
+      services:
+        - kind: Service
+          name: vaultwarden
+          namespace: apps
+          port: 80
+  tls:
+    secretName: "${domain}"
+    domains:
+      - main: "*.${domain}"

@@ -2,6 +2,6 @@ resources:
   - pvc.yml
   - deployment.yml
   - service.yml
-  - http-route.yml
+  - ingress-route.yml
   - image-repository.yml
   - image-policy.yml
