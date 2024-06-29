@@ -56,6 +56,8 @@ spec:
           value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
         - name: COLLECTIONS
           value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
+        - name: DISABLE_PARSERS
+          value: "crowdsecurity/whitelists"
       envFrom:
         - secretRef:
             name: crowdsec
