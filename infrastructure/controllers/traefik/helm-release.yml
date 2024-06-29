@@ -15,12 +15,22 @@ spec:
     image:
       repository: traefik # {"$imagepolicy": "infrastructure:traefik:name"}
       tag: 3.0.3 # {"$imagepolicy": "infrastructure:traefik:tag"}
+    
     experimental:
+      plugins:
+        enabled: true
       kubernetesGateway:
         enabled: true
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
+      - --experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin
+      - --experimental.plugins.bouncer.version=v1.1.7
+      - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.external.http.middlewares=traefik-bouncer@kubernetescrd
+      - --providers.kubernetescrd
     service:
       spec:
         loadBalancerIP: 10.0.111.40
