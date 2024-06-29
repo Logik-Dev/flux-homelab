@@ -26,6 +26,9 @@ spec:
           value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
         - name: COLLECTIONS
           value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
+      envFrom:
+        - secretRef:
+            name: crowdsec
       persistentVolume:
         config:
           enabled: false
