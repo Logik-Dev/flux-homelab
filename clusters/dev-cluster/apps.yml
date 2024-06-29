@@ -27,4 +27,10 @@ spec:
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
-
+  patches:
+    - target:
+        kind: IngressRoute
+      patch: |
+        - op: replace
+          path: /metadata/namespace
+          value: infrastructure
