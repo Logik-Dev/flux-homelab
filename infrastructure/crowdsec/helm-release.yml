@@ -38,6 +38,8 @@ spec:
       persistentVolume:
         config:
           enabled: false
+        data:
+          enabled: false
       resources:
         requests:
           cpu: 250m
