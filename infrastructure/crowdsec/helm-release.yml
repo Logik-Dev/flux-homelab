@@ -28,6 +28,10 @@ spec:
           podName: unifi-*
           program: unifi
       env:
+        - name: DISABLE_LOCAL_API
+          value: "false"
+        - name: DISABLE_ONLINE_API
+          value: "false"
         - name: PARSERS
           value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
         - name: COLLECTIONS
