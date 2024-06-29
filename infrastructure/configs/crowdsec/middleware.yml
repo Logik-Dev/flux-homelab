@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-    name: bouncer
+    name: traefik-bouncer
     namespace: infrastructure
 spec:
     plugin:
@@ -29,8 +29,8 @@ sops:
             K29SS2Y2a2RJREU4ZkFuWHdJN096bFUK/Y4awvsALw+7OyEQZvKDyCl3Baif5dPC
             ZaVFIPdMRpUkYZxzRuWDdbUJEajYfd9r7Aqq5bqHyM2WvOzKNxYVEA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-29T07:02:18Z"
-    mac: ENC[AES256_GCM,data:FSQAywlSZbvhEw4N3I1S2fIPtDgVXYPwMBhAg+w5GgnviaX4ss+Nh4NT7b/U97IFcPE/9JU5AKywuP5ZAhbUfzHmU9BxKTT6VL50ATdXJ8y0ZB2/vwQriXWbaPj554ANq73Wdbmcp1/x/MujI9ABRHKl1r8qJYsnsAOMw9T0imo=,iv:ertJGAyF5BMS3G8lUJXA1MyhlbQag11vY43qwRVe1nM=,tag:N2TjjoTxeDBYmwlu6Hcmuw==,type:str]
+    lastmodified: "2024-06-29T10:58:11Z"
+    mac: ENC[AES256_GCM,data:SadS3teVs8XE6XWcIHjYLkIPFp2ZMLEN0B2cpJD0JRM3xSx0u3lQmgF1dKF5UR7N+ieWuDcr0F45hbIF5NU8GGXlIkd9bdgVTxoy3NWX66Ut9JZdmcLybrO2manbUAg6gx6BqLDfSe/LaYNmwyyo/F38V0hvbWsWyFfMcs6YBf8=,iv:qmvWaoneiXJeU8Le8wQmnf92Tdc+O6SM+8IClveT7Aw=,tag:P77yyY0UYw6vyYaZkFSPuw==,type:str]
     pgp: []
     encrypted_regex: ^crowdsecLapiKey$
     version: 3.8.1
