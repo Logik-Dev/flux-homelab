@@ -5,3 +5,5 @@ metadata:
 spec:
   image: docker.io/mongo
   interval: 24h
+  exclusionList:
+    - 6.0.16-jammy
