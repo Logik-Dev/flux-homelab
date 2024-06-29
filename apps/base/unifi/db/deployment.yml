@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: unifi-db
-          image: docker.io/mongo:6.0.15-jammy # {"$imagepolicy": "apps:mongo-db"}
+          image: docker.io/mongo:6.0.16-jammy # {"$imagepolicy": "apps:mongo-db"}
           ports:
             - containerPort: 27017
               name: mongo
