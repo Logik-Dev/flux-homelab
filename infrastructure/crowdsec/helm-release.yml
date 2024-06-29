@@ -21,11 +21,12 @@ spec:
         - namespace: infrastructure
           podName: traefik-*
           program: traefik
-      env:
-        - name: PARSERS
-          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
-        - name: COLLECTIONS
-          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
+        - namespace: apps
+          podName: vaultwarden-*
+          program: vaultwarden
+        - namespace: apps
+          podName: unifi-*
+          program: unifi
       persistentVolume:
         config:
           enabled: false
@@ -51,6 +52,10 @@ spec:
           value: "false"
         - name: DISABLE_ONLINE_API
           value: "false"
+        - name: PARSERS
+          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
+        - name: COLLECTIONS
+          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
       envFrom:
         - secretRef:
             name: crowdsec
