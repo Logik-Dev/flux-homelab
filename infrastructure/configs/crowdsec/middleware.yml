@@ -7,7 +7,7 @@ spec:
     plugin:
         bouncer:
             enabled: true
-            crowdsecMode: stream
+            crowdsecMode: none
             crowdsecLapiScheme: https
             crowdsecLapiHost: crowdsec-service.infrastructure:8080
             # crowdsecLapiKey: nGhnkR5jPxNf2gRNbJGxSMpCxmuJHi4PWA2h
@@ -29,8 +29,8 @@ sops:
             K29SS2Y2a2RJREU4ZkFuWHdJN096bFUK/Y4awvsALw+7OyEQZvKDyCl3Baif5dPC
             ZaVFIPdMRpUkYZxzRuWDdbUJEajYfd9r7Aqq5bqHyM2WvOzKNxYVEA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-29T13:33:05Z"
-    mac: ENC[AES256_GCM,data:JkxAtO09W/+YEHyWGiQbx/F06LRxQYbCh+kEno4jExMh6OnnhIX67yCljMFHXtio1cN3X6X+0ZZuqgwohauN83EWMnhZnyCujemPao3WaJwjiMKnvOLNLmMc7cdwdKNzUKoYYAmIDqI0TvktX/cZAWWgHnFsVPmy1Kywb7FhFLM=,iv:Scg9V/mxDiR/k///CT5IfCggily/FWXulSv/Hcu+Bb0=,tag:7EqaHyyCZCjThwvhRp8ZQw==,type:str]
+    lastmodified: "2024-06-29T20:25:43Z"
+    mac: ENC[AES256_GCM,data:8bCS8/0kfpDTgayGLhYOl794Q+G5O35bKYK+kG/ZzOlzxKi9WxAsf15m6j60U5WIk0sb3ahe8SVwsOVhKC22u7zOT2QLD6zSn0DiQ8FgWulqLrWA2+60ZowPxTig31W8dNFpr3LXSmNUQkgKm9wsTtiaDo3mRzOJ7yZnI2LAkj8=,iv:iegMxBARmYLxhyB4EwV0r62Erqjh0DXlWCC0yqgX1YM=,tag:nWpZSHzsYfboUbaOwlq3uA==,type:str]
     pgp: []
     encrypted_regex: ^crowdsecLapiKey$
     version: 3.8.1
