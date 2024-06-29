@@ -26,9 +26,6 @@ spec:
           value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
         - name: COLLECTIONS
           value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
-      envFrom:
-        - secretRef:
-            name: crowdsec
       persistentVolume:
         config:
           enabled: false
@@ -49,6 +46,11 @@ spec:
           memory: 200Mi
         limits:
           memory: 200Mi
+      env:
+        - name: DISABLE_LOCAL_API
+          value: "false"
+        - name: DISABLE_ONLINE_API
+          value: "false"
       envFrom:
         - secretRef:
             name: crowdsec
