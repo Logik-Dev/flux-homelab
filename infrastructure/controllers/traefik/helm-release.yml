@@ -36,7 +36,7 @@ spec:
      # - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
      # - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
      # - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
-      - --entrypoints.external.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.external.http.middlewares=infrastructure-bouncer@kubernetescrd
       - --providers.kubernetescrd
     service:
       spec:
