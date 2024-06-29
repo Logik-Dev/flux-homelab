@@ -18,7 +18,7 @@ spec:
       enabled: true
     agent:
       acquisition:
-        - namespace: traefik
+        - namespace: infrastructure
           podName: traefik-*
           program: traefik
       env:
