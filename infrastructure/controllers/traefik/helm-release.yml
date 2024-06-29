@@ -41,6 +41,7 @@ spec:
     service:
       spec:
         loadBalancerIP: 10.0.111.40
+        externalTrafficPolicy: Local
     ports:
       web:
         redirectTo:
