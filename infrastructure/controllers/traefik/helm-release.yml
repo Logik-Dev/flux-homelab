@@ -15,7 +15,14 @@ spec:
     image:
       repository: traefik # {"$imagepolicy": "infrastructure:traefik:name"}
       tag: 3.0.3 # {"$imagepolicy": "infrastructure:traefik:tag"}
-    
+    providers:
+      kubernetesCRD:
+        enabled: true
+        allowCrossNamespace: true
+        allowExternalNameServices: true
+    logs:
+      access:
+        enabled: true
     experimental:
       plugins:
         crowdsec-bouncer-traefik-plugin:
@@ -26,8 +33,6 @@ spec:
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
-      #- '--experimental.plugins.bouncer.moduleName=github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin'
-      #- '--experimental.plugins.bouncer.version=v1.1.7'
       - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
