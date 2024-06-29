@@ -14,26 +14,39 @@ spec:
       interval: 10m
   values:
     container_runtime: containerd
-    lapi:
+    tls:
+      enabled: true
+    agent:
+      acquisition:
+        - namespace: traefik
+          podName: traefik-*
+          program: traefik
+      env:
+        - name: PARSERS
+          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
+        - name: COLLECTIONS
+          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
       persistentVolume:
-        data:
-          accessModes: ["ReadWriteOnce"]
-          enabled: true
-          size: 1Gi
-          storageClassName: "fast-nfs"
         config:
-          accessModes: ["ReadWriteOnce"]
+          enabled: false
+    lapi:
+      dashboard:
+        enabled: false
+        ingress: 
+          host: dashboard.local
           enabled: true
-          size: 1Gi
-          storageClassName: "fast-nfs"
+      persistentVolume:
+        config:
+          enabled: false
+      resources:
+        requests:
+          cpu: 250m
+          memory: 200Mi
+        limits:
+          memory: 200Mi
       envFrom:
         - secretRef:
             name: crowdsec
-    agent:
-      acquisition:
-        - namespace: infrastructure
-          podName: traefik-*
-          program: traefik
-    env:
-     - name: COLLECTIONS
-       value: crowdsecurity/traefik
+
+
+        
