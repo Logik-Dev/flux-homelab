@@ -10,7 +10,10 @@ spec:
             crowdsecMode: stream
             crowdsecLapiScheme: https
             crowdsecLapiHost: crowdsec-service.crowdsec:8080
-            crowdsecLapiKey: ENC[AES256_GCM,data:X7JfE+VFjyjraJyRxETjkb9BvEWU9cKB4yDVZPA+gM48qYFh,iv:Bq5ZbB87tcGJQayh35FSOcmPkmbYSbNIztc6ROZm8Tk=,tag:ujCn4HEP77woEwFkkGCMzA==,type:str]
+            # crowdsecLapiKey: nGhnkR5jPxNf2gRNbJGxSMpCxmuJHi4PWA2h
+            crowdsecLapiTLSCertificateAuthorityFile: /etc/traefik/crowdsec-certs/ca.crt
+            crowdsecLapiTLSCertificateBouncerFile: /etc/traefik/crowdsec-certs/tls.crt
+            crowdsecLapiTLSCertificateBouncerKeyFile: /etc/traefik/crowdsec-certs/tls.key
 sops:
     kms: []
     gcp_kms: []
@@ -26,8 +29,8 @@ sops:
             K29SS2Y2a2RJREU4ZkFuWHdJN096bFUK/Y4awvsALw+7OyEQZvKDyCl3Baif5dPC
             ZaVFIPdMRpUkYZxzRuWDdbUJEajYfd9r7Aqq5bqHyM2WvOzKNxYVEA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-29T06:47:49Z"
-    mac: ENC[AES256_GCM,data:mwhGrWLDecErIN5MPURs58CSWhDz7aabLpPGuS5LfN/btSa21v9F5nNIRraY2x/dg5gGKpIUVZ7j/ZSxsHe9KMe7+Euiu5+78PqWUsb2swLiSUM3Z4A9MRogVMAmXeNPqLuCTzTuiTLMgRpfQwt+7LSuPiK5TsyWAZe9/CbXLJ4=,iv:fJozXoJK1pKoVGvUlJtYPA6c1TexbPcYtrdDcJsDv4Q=,tag:mmaLc/cMrsqYugW+rn0XRg==,type:str]
+    lastmodified: "2024-06-29T07:02:18Z"
+    mac: ENC[AES256_GCM,data:FSQAywlSZbvhEw4N3I1S2fIPtDgVXYPwMBhAg+w5GgnviaX4ss+Nh4NT7b/U97IFcPE/9JU5AKywuP5ZAhbUfzHmU9BxKTT6VL50ATdXJ8y0ZB2/vwQriXWbaPj554ANq73Wdbmcp1/x/MujI9ABRHKl1r8qJYsnsAOMw9T0imo=,iv:ertJGAyF5BMS3G8lUJXA1MyhlbQag11vY43qwRVe1nM=,tag:N2TjjoTxeDBYmwlu6Hcmuw==,type:str]
     pgp: []
     encrypted_regex: ^crowdsecLapiKey$
     version: 3.8.1
