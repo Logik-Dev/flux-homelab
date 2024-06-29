@@ -1,7 +1,7 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-    name: traefik-bouncer
+    name: bouncer
     namespace: infrastructure
 spec:
     plugin:
@@ -9,7 +9,7 @@ spec:
             enabled: true
             crowdsecMode: stream
             crowdsecLapiScheme: https
-            crowdsecLapiHost: crowdsec-service.crowdsec:8080
+            crowdsecLapiHost: crowdsec-service.infrastructure:8080
             # crowdsecLapiKey: nGhnkR5jPxNf2gRNbJGxSMpCxmuJHi4PWA2h
             crowdsecLapiTLSCertificateAuthorityFile: /etc/traefik/crowdsec-certs/ca.crt
             crowdsecLapiTLSCertificateBouncerFile: /etc/traefik/crowdsec-certs/tls.crt
@@ -29,8 +29,8 @@ sops:
             K29SS2Y2a2RJREU4ZkFuWHdJN096bFUK/Y4awvsALw+7OyEQZvKDyCl3Baif5dPC
             ZaVFIPdMRpUkYZxzRuWDdbUJEajYfd9r7Aqq5bqHyM2WvOzKNxYVEA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-06-29T10:58:11Z"
-    mac: ENC[AES256_GCM,data:SadS3teVs8XE6XWcIHjYLkIPFp2ZMLEN0B2cpJD0JRM3xSx0u3lQmgF1dKF5UR7N+ieWuDcr0F45hbIF5NU8GGXlIkd9bdgVTxoy3NWX66Ut9JZdmcLybrO2manbUAg6gx6BqLDfSe/LaYNmwyyo/F38V0hvbWsWyFfMcs6YBf8=,iv:qmvWaoneiXJeU8Le8wQmnf92Tdc+O6SM+8IClveT7Aw=,tag:P77yyY0UYw6vyYaZkFSPuw==,type:str]
+    lastmodified: "2024-06-29T13:33:05Z"
+    mac: ENC[AES256_GCM,data:JkxAtO09W/+YEHyWGiQbx/F06LRxQYbCh+kEno4jExMh6OnnhIX67yCljMFHXtio1cN3X6X+0ZZuqgwohauN83EWMnhZnyCujemPao3WaJwjiMKnvOLNLmMc7cdwdKNzUKoYYAmIDqI0TvktX/cZAWWgHnFsVPmy1Kywb7FhFLM=,iv:Scg9V/mxDiR/k///CT5IfCggily/FWXulSv/Hcu+Bb0=,tag:7EqaHyyCZCjThwvhRp8ZQw==,type:str]
     pgp: []
     encrypted_regex: ^crowdsecLapiKey$
     version: 3.8.1
