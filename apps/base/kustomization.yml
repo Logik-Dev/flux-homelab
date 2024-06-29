@@ -11,3 +11,11 @@ resources:
   - nextcloud
   - home-assistant
   - unifi
+patches:
+  - target:
+      kind: IngressRoute
+      name: unifi
+    patch: |
+      - op: replace
+        path: /metadata/namespace
+        value: infrastructure

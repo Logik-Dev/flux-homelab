@@ -20,6 +20,5 @@ spec:
           serversTransport: unifi
   tls:
     secretName: "${env}.${domain}"
-    namespace: infrastructure
     domains:
       - main: "*.${env}.${domain}"
