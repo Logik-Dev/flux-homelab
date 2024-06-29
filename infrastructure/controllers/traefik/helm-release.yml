@@ -44,3 +44,7 @@ spec:
         expose:
           default: true
         exposedPort: 444
+    volumes:
+      - name: crowdsec-bouncer-tls
+        mountPath: /etc/traefik/crowdsec-certs
+        type: secret
