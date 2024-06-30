@@ -1,3 +1,4 @@
+namespace: crowdsec
 resources:
   - namespace.yml
   - cm.yml
