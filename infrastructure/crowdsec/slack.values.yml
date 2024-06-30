@@ -1,0 +1,22 @@
+notifications:
+    slack.yaml: ENC[AES256_GCM,data:lq7JeRLCGGYMIvyay0Feu5g0W6VFLXNws4Gs9Vo2YBO8DnjjCRDLuz9htxkdzmMsm6763twRWf7RNrSaVTPWjlY7AQaDDmr/OVbCLGR+rIeozMM/xubjpV5OIzLEoiDPVKxNH98K/9kBpMwCI5gzuN5HxUusHTi7FFiKF4p+FIgMfVmT548dlOLDdPssesJVBpaxRFUZ1izn5lG2dFko3454uZv+Vo8duMevFQc8HnNxjB8Wk4r4IvFuHpoPX3tt8tRua8L6NchZTGt4SsnKTs3AY/tUwiqQr1vxSMa90gpDXFIgoqELA2+/AdyOZGgKhAtc1DFPdNI5kScSfzXv9TG9Qd0Jg9ApxvbwuFZF3IZ7ryHK1V09RDHZjo3BGS/xVodJ9Axyi2ed2tELTGh2Ij0CLBDhlVmTst5d5LzwTdV/vug3Sj5v67PjAVqbdjlJZiwDAjoGCuXKXaCa2pNifDsH0ewFj+gNTUSFQMWXGv8/n4286OkLL2eyssjaMZLn2wRZF8NimNjueUvsbKxsk94JzhRWzrTCV92zMeCeYIjvAb/HGlleHfdRZSbBDR7xdqTLXairm76BSoOUs8sIiILo7BovEfsxeppI7GWipA0m01/cThobb2/J0yyh37jQn4/poJENPPqL2BsE9B8HpwgN3RVjUSlqxebqhpOXHF1qvwz5flAWkA78Y5oJikAhqtL0lN/LI80TrwbxSjOlV8uKS/2BywUrGszAFnCBn4ilVBe18LHjmKxCr4gpoRSN8RtcJnMvgwDibrMdhofkgAZiTsp2Jv+jvayVG9XWuNl4pZ5fW2MwLGFs7Oetu9jpeNHUG0wXDIQRFTHkKrOXiWNPbUT5J67XeBb9LL4I6/pYaII4LtfGP0O5194kyuQw2Y2u6Gcm4Ns8AHOQGQMiRY/p5zmde/ee4OTpI11biqKmZlizUvJQelboINuw56JvTtObJM6ScFtJNx4OKAVhA/DODrqzEAFDJSE/oSiBP93DK+eRJ4JDozTw1pY2U8MUN+b1eRMc3bklVZusJhs=,iv:eZUO5jwUJHe8YkdGo9ymiM42eN/bJfak81PIfilXmBc=,tag:X6c8cWYsLTmhEEFlMBw6rA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age12th6l9858s0vvr9vwgvj3h3fr02taeq5xx64s0p4uvsra9vstqrqseqv3p
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBmeFVOOGZ1elV6dllzbk13
+            OGZqTXNaQmRPV0M5TkhMdWR6YW94bmlzcVVvCklRWmxNYXQ1QzYrQ1B1QUg3SlJq
+            NS9uQnppWEUyT044dHFSQmNvZHd2VlUKLS0tIGQ4d21LbitrUG1GMVRtdnl5K2dH
+            RC83ZHpxNi9UYVhNaStJd3ZYTjJKLzgKLehXwwoWevMaEidIANafZUNjCCG/9dhW
+            uc7qGiw9i2ot4Y3+GX4YMcOC8kAeEjnSZNBJ5zYVizdp8T96akKIsA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-06-30T12:31:57Z"
+    mac: ENC[AES256_GCM,data:JET56Br84h9ULGaHge4tfYqcs5yJ5XPUe86HWQ6URXK4JurUK9u60JkTOFzM4cZbX75QdLpSNa5w8DaNaBOfjfSNbpu0sUsA6tnjkUPjWM4IFnDG8KWwmYWuBM9MPEPKnKjh6NY6RdEdur23xNBXqUZXUDqYeNx4P4OiuRQZCnQ=,iv:P+WmQtR1yZfV222qzW5y3V4NphVFYDgCZyqbCFwzb2U=,tag:1nsEXJxLfpvea8TVNLSmMg==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1

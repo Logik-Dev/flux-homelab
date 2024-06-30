@@ -4,3 +4,9 @@ resources:
   - secret.yml
   - helm-repository.yml
   - helm-release.yml
+secretGenerator:
+  - name: slack-values
+    files:
+      - values.yaml=slack-values.yml
+configurations:
+  - kustomizeconfig.yml
