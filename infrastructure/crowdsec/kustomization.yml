@@ -5,5 +5,6 @@ resources:
   - helm-release.yml
 configMapGenerator:
   - name: crowdsec-env
+    namespace: crowdsec
     envs:
       - .env
