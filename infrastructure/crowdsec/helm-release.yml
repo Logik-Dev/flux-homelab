@@ -57,7 +57,8 @@ spec:
           value: "crowdsecurity/whitelists"
       persistentVolume:
         config:
-          enabled: false
+          enabled: true
+          storageClassName: "fast-nfs"
     lapi:
       dashboard:
         enabled: false
