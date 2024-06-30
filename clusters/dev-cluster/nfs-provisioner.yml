@@ -20,8 +20,7 @@ spec:
         name: fast-nfs
       patch: |
         - op: add
-          path: /spec/values
+          path: /spec/values/nfs
           value:
-            nfs:
-              server: 10.0.111.20
-              path: /nfs/containers
+            server: 10.0.111.20
+            path: /nfs/containers
