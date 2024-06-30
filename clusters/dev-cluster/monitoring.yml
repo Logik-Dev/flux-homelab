@@ -14,3 +14,7 @@ spec:
   path: ./monitoring
   prune: true
   wait: false
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
