@@ -44,9 +44,12 @@ spec:
         - namespace: apps
           podName: unifi-*
           program: unifi
-      envFrom:
-        - configMapRef:
-            name: crowdsec-env
+      env:
+        DISABLE_LOCAL_API: "false"
+        DISABLE_ONLINE_API: "false"
+        PARSERS: "crowdsecurity/cri-logs crowdsecurity/whitelists"
+        COLLECTIONS: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
+        DISABLE_PARSERS: "crowdsecurity/whitelists"
       persistentVolume:
         config:
           enabled: false
