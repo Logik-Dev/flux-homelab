@@ -1,5 +1,9 @@
-namespace: infrastructure
 resources:
+  - namespace.yml
   - secret.yml
   - helm-repository.yml
   - helm-release.yml
+configMapGenerator:
+  - name: crowdsec-env
+    envs:
+      - .env

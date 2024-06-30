@@ -3,6 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: crowdsec
+  namespace: crowdsec
 spec:
   interval: 10m
   chart:
@@ -16,6 +17,9 @@ spec:
     container_runtime: containerd
     tls:
       enabled: true
+      bouncer:
+        reflector:
+          namespaces: ["traefik"]
     agent:
       acquisition:
         - namespace: infrastructure
@@ -27,17 +31,9 @@ spec:
         - namespace: apps
           podName: unifi-*
           program: unifi
-      env:
-        - name: DISABLE_LOCAL_API
-          value: "false"
-        - name: DISABLE_ONLINE_API
-          value: "false"
-        - name: PARSERS
-          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
-        - name: COLLECTIONS
-          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
-        - name: DISABLE_PARSERS
-          value: "crowdsecurity/whitelists"
+      envFrom:
+        - configMapRef:
+            name: crowdsec-env
       persistentVolume:
         config:
           enabled: false
@@ -58,20 +54,11 @@ spec:
           memory: 200Mi
         limits:
           memory: 200Mi
-      env:
-        - name: DISABLE_LOCAL_API
-          value: "false"
-        - name: DISABLE_ONLINE_API
-          value: "false"
-        - name: PARSERS
-          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
-        - name: COLLECTIONS
-          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
-        - name: DISABLE_PARSERS
-          value: "crowdsecurity/whitelists"
       envFrom:
         - secretRef:
             name: crowdsec
+        - configMapRef:
+            name: crowdsec-env
 
 
         
