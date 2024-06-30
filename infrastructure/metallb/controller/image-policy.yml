@@ -5,6 +5,7 @@ metadata:
 spec:
   imageRepositoryRef:
     name: metallb-controller
+    namespace: flux-system
   policy:
     semver: 
       range: v0.x

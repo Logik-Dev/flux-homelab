@@ -14,6 +14,13 @@ spec:
   path: ./infrastructure/metallb/controller
   prune: true
   wait: true
+  patches:
+    - target:
+        kind: ImagePolicy
+      patch: |
+        - op: replace
+          path: /metadata/namespace
+          value: flux-system
 ---
 # Metallb config
 apiVersion: kustomize.toolkit.fluxcd.io/v1

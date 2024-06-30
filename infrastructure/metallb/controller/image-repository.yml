@@ -5,7 +5,7 @@ metadata:
   name: metallb-controller 
 spec:
   image: quay.io/metallb/controller
-  interval: 5m
+  interval: 24h
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
@@ -13,4 +13,4 @@ metadata:
   name: metallb-speaker
 spec:
   image: quay.io/metallb/speaker
-  interval: 5m
+  interval: 24h

@@ -11,6 +11,10 @@ spec:
     name: image-automations-provider
   eventSeverity: info
   eventSources:
+    # metallb
+    - kind: ImageUpdateAutomation
+      name: "*"
+      namespace: metallb-system
     # apps
     - kind: ImageUpdateAutomation
       name: '*'
@@ -19,3 +23,4 @@ spec:
     - kind: ImageUpdateAutomation
       name: '*'
       namespace: infrastructure
+    

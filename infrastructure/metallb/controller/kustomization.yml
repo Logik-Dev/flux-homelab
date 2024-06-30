@@ -1,8 +1,7 @@
-namespace: infrastructure
+namespace: metallb-system
 resources:
   - namespace.yml
   - helm-repository.yml
   - helm-release.yml
   - image-policy.yml
   - image-repository.yml
-  #- https://raw.githubusercontent.com/metallb/metallb/v0.14.5/config/manifests/metallb-native.yaml
