@@ -66,8 +66,7 @@ spec:
           enabled: true
           storageClassName: fast-nfs
         data:
-          enabled: true
-          storageClassName: fast-nfs
+          enabled: false
       resources:
         requests:
           cpu: 250m
