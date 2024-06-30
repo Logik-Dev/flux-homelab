@@ -16,7 +16,7 @@ spec:
     name: flux-system
   path: ./infrastructure/crowdsec
   prune: true
-  wait: false
+  wait: true
   decryption:
     provider: sops
     secretRef:
