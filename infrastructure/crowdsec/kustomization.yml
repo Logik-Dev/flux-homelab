@@ -7,6 +7,6 @@ resources:
 secretGenerator:
   - name: slack-values
     files:
-      - values.yaml=slack-values.yml
+      - values.yaml=slack.values.yml
 configurations:
   - kustomizeconfig.yml
