@@ -45,11 +45,16 @@ spec:
           podName: unifi-*
           program: unifi
       env:
-        DISABLE_LOCAL_API: "false"
-        DISABLE_ONLINE_API: "false"
-        PARSERS: "crowdsecurity/cri-logs crowdsecurity/whitelists"
-        COLLECTIONS: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
-        DISABLE_PARSERS: "crowdsecurity/whitelists"
+        - name: DISABLE_LOCAL_API
+          value: "false"
+        - name: DISABLE_ONLINE_API
+          value: "false"
+        - name: PARSERS
+          value: "crowdsecurity/cri-logs crowdsecurity/whitelists"
+        - name: COLLECTIONS
+          value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
+        - name: DISABLE_PARSERS
+          value: "crowdsecurity/whitelists"
       persistentVolume:
         config:
           enabled: false
