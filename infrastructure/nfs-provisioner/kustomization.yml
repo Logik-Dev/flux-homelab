@@ -1,0 +1,6 @@
+namespace: nfs-provisioner
+resources:
+  - namespace.yml
+  - helm-repository.yml
+  - slow-nfs
+  - fast-nfs

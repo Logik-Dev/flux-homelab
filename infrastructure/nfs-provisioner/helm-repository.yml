@@ -4,5 +4,5 @@ kind: HelmRepository
 metadata:
   name: nfs-provisioner
 spec:
-  interval: 1m
+  interval: 24h
   url: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner

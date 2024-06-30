@@ -13,12 +13,12 @@ spec:
         kind: HelmRepository
         name: nfs-provisioner
       interval: 10m
-  valuesFrom:
-  - kind: Secret
-    name: slow-nfs-values
   values:
     storageClass:
       name: slow-nfs
       provisionerName: slow-nfs
       onDelete: retain
       pathPattern: medias
+    nfs:
+      server: 192.168.11.200
+      path: /exports

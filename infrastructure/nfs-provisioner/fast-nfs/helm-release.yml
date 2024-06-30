@@ -13,9 +13,6 @@ spec:
         kind: HelmRepository
         name: nfs-provisioner
       interval: 10m
-  valuesFrom:
-  - kind: Secret
-    name: fast-nfs-values
   values:
     storageClass:
       name: fast-nfs
