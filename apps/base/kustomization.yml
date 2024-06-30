@@ -2,7 +2,6 @@ namespace: apps
 resources:
   - common
   - wireguard
-  - vaultwarden
   - prowlarr
   - flaresolverr
   - radarr
