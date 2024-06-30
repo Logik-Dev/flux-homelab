@@ -75,13 +75,6 @@ patches:
       - op: add
         path: /spec/loadBalancerIP
         value: 10.0.111.45
-  - target:
-      kind: IngressRoute
-      name: unifi
-    patch: |
-      - op: replace
-        path: /metadata/namespace
-        value: infrastructure
   # unifi-udp
   - target:
       kind: Service
