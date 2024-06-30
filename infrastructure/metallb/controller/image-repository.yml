@@ -3,6 +3,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: metallb-controller 
+  namespace: flux-system
 spec:
   image: quay.io/metallb/controller
   interval: 24h
@@ -11,6 +12,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: metallb-speaker
+  namespace: flux-system
 spec:
   image: quay.io/metallb/speaker
   interval: 24h

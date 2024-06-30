@@ -2,6 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: metallb-controller
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: metallb-controller
@@ -14,9 +15,11 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: metallb-speaker
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: metallb-speaker
+    namespace: flux-system
   policy:
     semver: 
       range: v0.x
