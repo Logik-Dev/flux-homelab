@@ -1,3 +1,0 @@
-namespace: infrastructure
-resources:
-  - middleware.yml
