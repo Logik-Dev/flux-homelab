@@ -2,6 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: traefik
+  namespace: traefik
 spec:
   interval: 10m
   chart:
@@ -13,8 +14,8 @@ spec:
       interval: 10m
   values:
     image:
-      repository: traefik # {"$imagepolicy": "infrastructure:traefik:name"}
-      tag: 3.0.3 # {"$imagepolicy": "infrastructure:traefik:tag"}
+      repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
+      tag: 3.0.3 # {"$imagepolicy": "flux-system:traefik:tag"}
     providers:
       kubernetesCRD:
         enabled: true
@@ -33,13 +34,12 @@ spec:
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
-      - --entrypoints.web.http.middlewares=infrastructure-bouncer@kubernetescrd
-      - --entrypoints.websecure.http.middlewares=infrastructure-bouncer@kubernetescrd
-      - --entrypoints.internal.http.middlewares=infrastructure-bouncer@kubernetescrd
-      - --entrypoints.external.http.middlewares=infrastructure-bouncer@kubernetescrd
+      - --entrypoints.web.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
+      - --entrypoints.external.http.middlewares=traefik-bouncer@kubernetescrd
     service:
       spec:
-        loadBalancerIP: 10.0.111.40
         externalTrafficPolicy: Local
     ports:
       web:

@@ -1,7 +1,0 @@
-namespace: infrastructure
-resources:
-  - ../base
-secretGenerator:
-  - name: fast-nfs-values
-    files: 
-      - values.yaml=fast-nfs-values.yml

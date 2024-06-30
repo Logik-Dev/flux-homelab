@@ -2,7 +2,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: traefik
+  name: traefik 
+  namespace: flux-system
 spec:
-  image: docker.io/traefik
-  interval: 5m
+  image: traefik
+  interval: 24h
