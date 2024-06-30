@@ -17,6 +17,7 @@ spec:
   patches:
     - target:
         kind: HelmRelease
+        name: fast-nfs
       patch: |
         - op: add
           path: /spec/values
