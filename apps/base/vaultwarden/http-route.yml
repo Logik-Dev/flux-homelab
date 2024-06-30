@@ -6,10 +6,10 @@ metadata:
 spec:
   parentRefs:
     - name: traefik
-      namespace: infrastructure
+      namespace: traefik
       sectionName: external-https
     - name: traefik
-      namespace: infrastructure
+      namespace: traefik
       sectionName: internal-https
   rules:
     - backendRefs:
