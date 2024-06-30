@@ -5,8 +5,6 @@ metadata:
   name: reflector
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: traefik-config 
   interval: 1h
   retryInterval: 15s
   timeout: 5m
