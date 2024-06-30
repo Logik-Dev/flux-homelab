@@ -2,16 +2,6 @@ resources:
   - ../base
 patches:
   - path: patch_wg_service.yml
-  # vaultwarden
-  - target:
-      kind: HTTPRoute
-      name: vaultwarden
-    patch: |
-      - op: add
-        path: /spec/hostnames
-        value:
-          - "vaultwarden.${domain}" 
-          - "vaultwarden.${env}.${domain}" 
   # prowlarr
   - target:
       kind: HTTPRoute

@@ -35,10 +35,10 @@ spec:
           namespaces: ["traefik"]
     agent:
       acquisition:
-        - namespace: infrastructure
+        - namespace: traefik
           podName: traefik-*
           program: traefik
-        - namespace: apps
+        - namespace: vaultwarden
           podName: vaultwarden-*
           program: vaultwarden
         - namespace: apps
