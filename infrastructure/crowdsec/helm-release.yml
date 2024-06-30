@@ -55,12 +55,6 @@ spec:
           value: "crowdsecurity/linux crowdsecurity/traefik Dominic-Wagner/vaultwarden crowdsecurity/unifi"
         - name: DISABLE_PARSERS
           value: "crowdsecurity/whitelists"
-      persistentVolume:
-        config:
-          enabled: true
-          accessModes:
-            - ReadWriteMany 
-          storageClassName: fast-nfs
     lapi:
       dashboard:
         enabled: false
