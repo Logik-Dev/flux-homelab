@@ -20,7 +20,7 @@ spec:
           from: All
     # external
     - name: external-https
-      hostname: "*.{domain}"
+      hostname: "*.${domain}"
       port: 8444
       protocol: HTTPS
       tls:
