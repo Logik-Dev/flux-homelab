@@ -7,6 +7,7 @@ spec:
   dependsOn:
     - name: metallb-config 
     - name: reflector
+    - name: cert-manager-controller
   interval: 1h
   retryInterval: 15s
   timeout: 5m
