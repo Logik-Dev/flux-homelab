@@ -58,7 +58,9 @@ spec:
       persistentVolume:
         config:
           enabled: true
-          storageClassName: "fast-nfs"
+          accessModes:
+            - ReadWriteMany 
+          storageClassName: fast-nfs
     lapi:
       dashboard:
         enabled: false
@@ -67,9 +69,11 @@ spec:
           enabled: true
       persistentVolume:
         config:
-          enabled: false
+          enabled: true
+          storageClassName: fast-nfs
         data:
-          enabled: false
+          enabled: true
+          storageClassName: fast-nfs
       resources:
         requests:
           cpu: 250m
