@@ -1,0 +1,64 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: traefik-controller
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: metallb-config 
+    - name: reflector
+    - name: cert-manager-controller
+  interval: 1h
+  retryInterval: 15s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/traefik/controller
+  prune: true
+  wait: true
+  patches:
+    - target:
+        kind: HelmRelease
+      patch: |
+        - op: add
+          path: /spec/values/service/spec/loadBalancerIP
+          value: 192.168.11.40
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: traefik-config
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: traefik-controller 
+  interval: 1h
+  retryInterval: 15s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/traefik/config
+  prune: true
+  wait: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+  postBuild:
+    substituteFrom:
+      - kind: Secret 
+        name: cluster-secrets
+  patches:
+    - target:
+        kind: Gateway
+      patch: |
+        - op: replace  
+          path: /spec/listeners/0/hostname
+          value: "*.prod.${domain}"
+        - op: add
+          path: /spec/listeners/0/tls
+          value:
+            certificateRefs:
+              - name: "prod.${domain}"
