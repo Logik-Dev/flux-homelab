@@ -2,9 +2,11 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: flaresolverr
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: flaresolverr
+    namespace: flux-system
   filterTags:
     pattern: '^v(?P<semver>3\.[0-9]*\.[0-9]*)'
     extract: '$semver'

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flaresolverr
+  namespace: seedbox
 spec:
   selector:
     matchLabels:
@@ -13,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flaresolverr
-          image: flaresolverr/flaresolverr:v3.3.21 # {"$imagepolicy": "apps:flaresolverr"}
+          image: flaresolverr/flaresolverr:v3.3.21 # {"$imagepolicy": "flux-system:flaresolverr"}
           ports:
             - containerPort: 8191
               name: http
