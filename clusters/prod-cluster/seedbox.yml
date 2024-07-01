@@ -13,7 +13,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./seedbox/prod
+  path: ./seedbox
   prune: true
   wait: true
   decryption:
