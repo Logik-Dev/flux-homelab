@@ -1,0 +1,46 @@
+# Metallb controller
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb-controller
+  namespace: flux-system
+spec:
+  interval: 1h
+  retryInterval: 15s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/metallb/controller
+  prune: true
+  wait: true
+
+---
+# Metallb config
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: metallb-config
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: metallb-controller
+  interval: 1h
+  retryInterval: 15s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/metallb/config
+  prune: true
+  wait: true
+  patches:
+  - target:
+      kind: IPAddressPool
+      name: pool
+    patch: |
+      - op: replace
+        path: /spec/addresses
+        value:
+          - 192.168.11.40/29
+---
