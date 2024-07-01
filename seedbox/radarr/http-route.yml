@@ -5,6 +5,8 @@ metadata:
   name: radarr
   namespace: seedbox
 spec:
+  hostnames:
+    - "radarr.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik

@@ -5,6 +5,8 @@ metadata:
   name: torrent
   namespace: seedbox
 spec:
+  hostnames:
+    - "torrent.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik 

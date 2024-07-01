@@ -5,6 +5,8 @@ metadata:
   name: prowlarr
   namespace: seedbox
 spec:
+  hostnames:
+    - "prowlarr.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik
