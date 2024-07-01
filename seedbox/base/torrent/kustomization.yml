@@ -10,5 +10,6 @@ resources:
   - image-policy.yml
 configMapGenerator:
   - name: gluetun-env
+    namespace: seedbox
     envs:
     - .env
