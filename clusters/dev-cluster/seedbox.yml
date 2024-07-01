@@ -1,0 +1,30 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: seedbox
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: traefik-config 
+  interval: 1h
+  retryInterval: 15s
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./seedbox/dev
+  prune: true
+  wait: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+  postBuild:
+    substitute:
+      quote: '"'
+      env: prod
+    substituteFrom:
+      - kind: Secret 
+        name: cluster-secrets
+
