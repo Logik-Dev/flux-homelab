@@ -4,6 +4,7 @@ resources:
   - flaresolverr
   - prowlarr
   - radarr
+  - sonarr
 patches:
   # prowlarr
   - target:

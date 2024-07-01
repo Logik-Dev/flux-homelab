@@ -2,7 +2,6 @@ namespace: apps
 resources:
   - common
   - wireguard
-  - sonarr
   - nextcloud
   - home-assistant
   - unifi

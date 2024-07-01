@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sonarr
+  namespace: seedbox
 spec:
   selector:
     matchLabels:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sonarr
-          image: lscr.io/linuxserver/sonarr:4.0.5.1710-ls243 # {"$imagepolicy": "apps:sonarr"}
+          image: lscr.io/linuxserver/sonarr:4.0.5.1710-ls243 # {"$imagepolicy": "flux-system:sonarr"}
           ports:
             - containerPort: 8989
               name: http

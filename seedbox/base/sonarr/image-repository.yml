@@ -2,6 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: sonarr
+  namespace: flux-system
 spec:
   image: lscr.io/linuxserver/sonarr
   interval: 24h
