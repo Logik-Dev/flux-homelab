@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: radarr
-          image: lscr.io/linuxserver/radarr:5.7.0.8882-ls226 # {"$imagepolicy": "apps:radarr"}
+          image: lscr.io/linuxserver/radarr:5.7.0.8882-ls227 # {"$imagepolicy": "apps:radarr"}
           ports:
             - containerPort: 7878
               name: http
