@@ -5,6 +5,9 @@ metadata:
   name: vaultwarden
   namespace: vaultwarden
 spec:
+  hostnames:
+    - "vaultwarden.${domain}"
+    - "vaultwarden.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik
