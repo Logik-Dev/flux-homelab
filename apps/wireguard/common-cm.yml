@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: common-env
+  namespace: wireguard
 data:
   PUID: ${quote}${uid}${quote}
   PGID: ${quote}${uid}${quote}

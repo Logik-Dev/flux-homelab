@@ -13,7 +13,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/dev
+  path: ./apps
   prune: true
   wait: true
   decryption:
@@ -23,7 +23,7 @@ spec:
   postBuild:
     substitute:
       quote: '"'
-      env: dev
+      env: prod
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
@@ -36,4 +36,4 @@ spec:
           path: /metadata
           value:
             annotations:
-              metallb.universe.tf/loadBalancerIPs: 10.0.111.41
+              metallb.universe.tf/loadBalancerIPs: 192.168.11.41

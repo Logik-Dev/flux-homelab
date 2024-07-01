@@ -2,10 +2,11 @@
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: nextcloud
+  name: home-assistant
+  namespace: home-assistant
 subsets:
   - addresses:
-      - ip: 192.168.11.150
+      - ip: 192.168.21.168
     ports:
-      - port: 11000
+      - port: 8123
         name: http

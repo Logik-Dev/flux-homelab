@@ -1,7 +1,0 @@
-namespace: apps
-resources:
-  - common
-  - wireguard
-  - nextcloud
-  - home-assistant
-  - unifi

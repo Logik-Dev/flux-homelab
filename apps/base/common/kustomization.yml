@@ -1,5 +1,0 @@
-resources:
-  - namespace.yml
-  - common-cm.yml
-  - image-update.yml
-  - slow-nfs-pvc.yml

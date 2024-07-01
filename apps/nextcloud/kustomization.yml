@@ -1,4 +1,5 @@
 resources:
+  - namespace.yml
   - endpoints.yml
   - svc.yml
   - http-route.yml

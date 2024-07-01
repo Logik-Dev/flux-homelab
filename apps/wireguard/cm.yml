@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: wireguard-env
+  namespace: wireguard
 data:
   SERVERURL: "\"wireguard.${domain}\""
   SERVERPORT: '51820'

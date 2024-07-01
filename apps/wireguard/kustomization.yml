@@ -1,4 +1,6 @@
 resources:
+  - namespace.yml
+  - common-cm.yml
   - pvc.yml
   - cm.yml
   - deployment.yml

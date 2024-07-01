@@ -2,9 +2,11 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: wireguard
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: wireguard
+    namespace: flux-system
   filterTags:
     pattern: ^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>\d*)-(?P<buildmetadata>r\d*)-ls(?P<incr>\d*)
     extract: '$incr'
