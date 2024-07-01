@@ -3,16 +3,16 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: gluetun 
+  namespace: flux-system
 spec:
   image: qmcgaw/gluetun
   interval: 24h
-  exclusionList: [] # bug with 3.38.0
-    #- "v3.38.*"
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: qbittorrent
+  namespace: flux-system
 spec:
   image: lscr.io/linuxserver/qbittorrent
   interval: 24h

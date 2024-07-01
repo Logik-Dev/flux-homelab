@@ -4,7 +4,6 @@ resources:
   - wireguard
   - radarr
   - sonarr
-  - torrent
   - nextcloud
   - home-assistant
   - unifi

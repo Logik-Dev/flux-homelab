@@ -1,12 +1,12 @@
 ---
-# gluetun pvc
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gluetun
+  name: torrent
+  namespace: seedbox
 spec:
   accessModes: [ReadWriteOnce]
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
   storageClassName: fast-nfs

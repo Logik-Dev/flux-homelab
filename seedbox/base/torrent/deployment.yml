@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: torrent
+  namespace: seedbox
 spec:
   selector:
     matchLabels:
@@ -15,7 +16,7 @@ spec:
       containers:
         # wireguard vpn
         - name: gluetun
-          image: qmcgaw/gluetun:v3.38.0 # {"$imagepolicy": "apps:gluetun"}
+          image: qmcgaw/gluetun:v3.38.0 # {"$imagepolicy": "flux-system:gluetun"}
           envFrom:
             - configMapRef:
                 name: common-env
@@ -38,7 +39,7 @@ spec:
               cpu: 300m
         # torrent
         - name: torrent
-          image: lscr.io/linuxserver/qbittorrent:4.6.5-r0-ls337 # {"$imagepolicy": "apps:qbittorrent"} 
+          image: lscr.io/linuxserver/qbittorrent:4.6.5-r0-ls337 # {"$imagepolicy": "flux-system:qbittorrent"} 
           ports:
             - containerPort: 8080
               name: http

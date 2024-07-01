@@ -1,5 +1,6 @@
 resources:
   - common
+  - torrent
   - flaresolverr
   - prowlarr
 patches:
