@@ -5,6 +5,9 @@ metadata:
   name: home-assistant
   namespace: home-assistant
 spec:
+  hostnames:
+    - "home.${domain}"
+    - "home.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik

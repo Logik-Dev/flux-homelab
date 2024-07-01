@@ -5,6 +5,9 @@ metadata:
   name: nextcloud
   namespace: nextcloud
 spec:
+  hostnames:
+    - "nextcloud.${domain}"
+    - "nextcloud.${env}.${domain}"
   parentRefs:
     - name: traefik
       namespace: traefik
