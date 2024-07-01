@@ -33,5 +33,5 @@ spec:
         name: wireguard
       patch: |
         - op: add
-          path: /metadata/annotations
-          value: metallb.universe.tf/loadBalancerIPs: 10.0.111.41
+          path: /metadata/annotations/metallb.univers.tf
+          value: "loadBalancerIPs: 10.0.111.41"
