@@ -1,9 +1,9 @@
 ---
-# pvc
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: radarr
+  namespace: seedbox
 spec:
   accessModes: [ReadWriteOnce]
   resources:

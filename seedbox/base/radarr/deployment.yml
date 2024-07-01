@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: radarr
+  namespace: seedbox
 spec:
   selector:
     matchLabels:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: radarr
-          image: lscr.io/linuxserver/radarr:5.7.0.8882-ls227 # {"$imagepolicy": "apps:radarr"}
+          image: lscr.io/linuxserver/radarr:5.7.0.8882-ls227 # {"$imagepolicy": "flux-system:radarr"}
           ports:
             - containerPort: 7878
               name: http

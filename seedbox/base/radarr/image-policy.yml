@@ -2,9 +2,11 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: radarr
+  namespace: flux-system
 spec:
   imageRepositoryRef:
     name: radarr
+    namespace: flux-system
   filterTags:
     pattern: '^(?P<semver>5\.[0-9]*\.[0-9]*)\.(?P<meta>[0-9]*-ls)(?P<tag>[0-9]*)'
     extract: '$tag'

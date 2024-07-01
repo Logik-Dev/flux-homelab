@@ -1,9 +1,9 @@
 ---
-# service
 apiVersion: v1
 kind: Service
 metadata:
   name: radarr
+  namespace: seedbox
 spec:
   selector:
     app: radarr

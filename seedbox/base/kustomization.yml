@@ -3,6 +3,7 @@ resources:
   - torrent
   - flaresolverr
   - prowlarr
+  - radarr
 patches:
   # prowlarr
   - target:
