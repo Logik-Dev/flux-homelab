@@ -15,7 +15,7 @@ spec:
   values:
     image:
       repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
-      tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
+      tag: 3.0.3 # {"$imagepolicy": "flux-system:traefik:tag"}
     providers:
       kubernetesCRD:
         enabled: true
