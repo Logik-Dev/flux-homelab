@@ -31,6 +31,7 @@ spec:
           version: "v1.3.2"
       kubernetesGateway:
         enabled: true
+        experimentalChannel: true
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
