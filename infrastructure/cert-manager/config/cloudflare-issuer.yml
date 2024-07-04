@@ -16,6 +16,7 @@ spec:
           - "*.${domain}"
           - "*.dev.${domain}"
           - "*.prod.${domain}"
+          - "*.intra.${domain}"
         dns01:
           cloudflare:
             email: ${email}
