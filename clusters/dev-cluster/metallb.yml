@@ -24,7 +24,7 @@ metadata:
   name: metallb-config
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   dependsOn:
     - name: metallb-controller
   interval: 1h
