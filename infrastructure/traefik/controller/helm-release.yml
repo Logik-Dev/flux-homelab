@@ -14,8 +14,10 @@ spec:
       interval: 10m
   values:
     image:
-      repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
-      tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
+      #repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
+      repository: traefik
+      #tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
+      tag: 3.1.0-rc3 
     providers:
       kubernetesGateway: {}
       kubernetesCRD:
