@@ -19,7 +19,7 @@ spec:
       #tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
       tag: 3.1.0-rc3 
     providers:
-      kubernetesGateway: {}
+      #kubernetesGateway: {}
       kubernetesCRD:
         enabled: true
         allowCrossNamespace: true
@@ -33,8 +33,8 @@ spec:
         bouncer:
           moduleName: "github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
           version: "v1.3.2"
-      kubernetesGateway:
-        enabled: true
+      #kubernetesGateway:
+      #  enabled: true
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
       - --entryPoints.external.address=:8444/tcp
@@ -42,6 +42,8 @@ spec:
       - --entrypoints.websecure.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.internal.http.middlewares=traefik-bouncer@kubernetescrd
       - --entrypoints.external.http.middlewares=traefik-bouncer@kubernetescrd
+      - --experimental.kubernetesgateway
+      - --providers.kubernetesgateway
     service:
       spec:
         externalTrafficPolicy: Local
