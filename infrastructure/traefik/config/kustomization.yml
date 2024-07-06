@@ -1,3 +1,5 @@
 resources:
+  - rbac.yml
+  - gateway-class.yml
   - gateway.yml
   - crowdsec-bouncer-middleware.yml
