@@ -17,8 +17,7 @@ spec:
       repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
       tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
     providers:
-      kubernetesGateway:
-        experimentalChannel: true
+      kubernetesGateway: {}
       kubernetesCRD:
         enabled: true
         allowCrossNamespace: true
