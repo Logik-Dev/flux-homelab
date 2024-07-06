@@ -5,6 +5,7 @@ metadata:
   name: metallb-controller
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   retryInterval: 15s
   timeout: 5m
@@ -23,6 +24,7 @@ metadata:
   name: metallb-config
   namespace: flux-system
 spec:
+  suspend: true
   dependsOn:
     - name: metallb-controller
   interval: 1h

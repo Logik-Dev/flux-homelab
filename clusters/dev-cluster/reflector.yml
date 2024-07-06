@@ -5,6 +5,7 @@ metadata:
   name: reflector
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   retryInterval: 15s
   timeout: 5m

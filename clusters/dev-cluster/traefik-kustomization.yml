@@ -4,6 +4,7 @@ metadata:
   name: traefik-controller
   namespace: flux-system
 spec:
+  suspend: true
   dependsOn:
     - name: metallb-config 
     - name: reflector
@@ -31,6 +32,7 @@ metadata:
   name: traefik-config
   namespace: flux-system
 spec:
+  suspend: true
   dependsOn:
     - name: traefik-controller 
   interval: 1h

@@ -6,6 +6,7 @@ metadata:
   name: cert-manager-controller
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   retryInterval: 15s
   timeout: 5m
@@ -23,6 +24,7 @@ metadata:
   name: cert-manager-config
   namespace: flux-system
 spec:
+  suspend: true
   dependsOn:
     - name: cert-manager-controller
   interval: 1h
