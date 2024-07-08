@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vaultwarden
-          image: vaultwarden/server:1.30.5 # {"$imagepolicy": "flux-system:vaultwarden"}
+          image: vaultwarden/server:1.31.0 # {"$imagepolicy": "flux-system:vaultwarden"}
           ports:
             - containerPort: 80
               name: http
