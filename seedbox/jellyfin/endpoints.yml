@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: jellyfin
+  namespace: seedbox
+subsets:
+  - addresses:
+      - ip: 192.168.11.150
+    ports:
+      - port: 32400
+        name: http

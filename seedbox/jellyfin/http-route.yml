@@ -1,0 +1,21 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: jellyfin
+  namespace: seedbox
+spec:
+  hostnames:
+    - "jellyfin.${env}.${domain}"
+    - "jellyfin.${domain}"
+  parentRefs:
+    - name: traefik
+      namespace: traefik
+      sectionName: internal-https
+    - name: traefik
+      namespace: traefik
+      sectionName: external-https
+  rules:
+    - backendRefs:
+        - name: jellyfin
+          port: 80
