@@ -5,8 +5,8 @@ metadata:
 spec:
   summary: "Flux system errors"
   eventMetadata:
-    env: ""
-    cluster: ""
+    env: "${env}"
+    cluster: "${env}-cluster"
   providerRef:
     name: slack-errors-provider
   eventSeverity: error

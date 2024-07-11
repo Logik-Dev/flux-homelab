@@ -5,8 +5,8 @@ metadata:
 spec:
   summary: "Image automations notifications"
   eventMetadata:
-    env: ""
-    cluster: ""
+    env: "${env}"
+    cluster: "${env}-cluster"
   providerRef:
     name: image-automations-provider
   eventSeverity: info
