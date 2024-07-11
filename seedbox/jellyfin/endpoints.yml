@@ -8,5 +8,5 @@ subsets:
   - addresses:
       - ip: 192.168.11.105
     ports:
-      - port: 32400
+      - port: 8096
         name: http
