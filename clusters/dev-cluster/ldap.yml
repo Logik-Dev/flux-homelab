@@ -1,25 +1,28 @@
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: crowdsec
+  name: ldap
   namespace: flux-system
 spec:
   suspend: false
   dependsOn:
-    - name: metallb-config
-    - name: reflector 
-    - name: cert-manager-controller
+    - name: cert-manager-config
   interval: 1h
   retryInterval: 15s
   timeout: 5m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/crowdsec
+  path: ./infrastructure/ldap
   prune: true
   wait: true
   decryption:
     provider: sops
     secretRef:
       name: sops-age
+  postBuild:
+    substitute:
+      env: dev
+    substituteFrom:
+      - kind: Secret 
+        name: cluster-secrets

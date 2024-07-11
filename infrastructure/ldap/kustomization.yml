@@ -1,0 +1,12 @@
+resources:
+  - namespace.yml
+  - cm.yml
+  - db.yml
+  - admin-password.yml
+  - schemas.yml
+  - pvc.yml
+  - cm.yml
+  - deployment.yml
+  - service.yml
+  - image-repository.yml
+  - image-policy.yml

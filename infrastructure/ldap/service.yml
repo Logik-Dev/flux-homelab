@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ldap 
+  namespace: ldap
+spec:
+  selector:
+    app: ldap
+  ports:
+    - port: 636
+      targetPort: tls

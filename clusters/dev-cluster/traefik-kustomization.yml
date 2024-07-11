@@ -4,7 +4,7 @@ metadata:
   name: traefik-controller
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   dependsOn:
     - name: metallb-config 
     - name: reflector
@@ -24,7 +24,7 @@ spec:
       patch: |
         - op: add
           path: /spec/values/service/spec/loadBalancerIP
-          value: 10.0.111.40
+          value: 192.168.12.40
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -52,15 +52,5 @@ spec:
     substituteFrom:
       - kind: Secret 
         name: cluster-secrets
-  patches:
-    - target:
-        kind: Gateway
-      patch: |
-        - op: replace  
-          path: /spec/listeners/0/hostname
-          value: "*.dev.${domain}"
-        - op: add
-          path: /spec/listeners/0/tls
-          value:
-            certificateRefs:
-              - name: "dev.${domain}"
+    substitute:
+      env: dev

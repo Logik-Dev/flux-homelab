@@ -10,7 +10,7 @@ spec:
   listeners:    
     #internal
     - name: internal-https
-      hostname: "replaced.by.env"
+      hostname: "*.${env}.${domain}"
       port: 8443
       protocol: HTTPS
       tls:

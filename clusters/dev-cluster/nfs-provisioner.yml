@@ -5,7 +5,7 @@ metadata:
   name: nfs-provisioner
   namespace: flux-system
 spec:
-  suspend: true
+  suspend: false
   interval: 1h
   retryInterval: 15s
   timeout: 5m
@@ -23,5 +23,5 @@ spec:
         - op: add
           path: /spec/values/nfs
           value:
-            server: 10.0.111.20
+            server: 192.168.12.20
             path: /nfs/containers

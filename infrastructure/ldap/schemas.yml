@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: schemas
+  namespace: ldap
+data:
+  argon2.ldif: |
+    dn: cn=module{1},cn=config
+    objectClass: olcModuleList
+    cn: module{1}
+    olcModulePath: /opt/bitnami/openldap/lib/openldap
+    olcModuleLoad: argon2.so

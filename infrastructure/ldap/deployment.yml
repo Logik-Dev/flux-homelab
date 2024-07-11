@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ldap
+  namespace: ldap
+spec:
+  selector:
+    matchLabels:
+      app: ldap
+  template:
+    metadata:
+      labels:
+        app: ldap
+    spec:
+      containers:
+      - image: bitnami/openldap:2.6.7 # {"$imagepolicy": "flux-system:ldap"}
+        name: ldap
+        resources:
+          requests:
+            cpu: 20m
+            memory: 55M
+          limits:
+            cpu: 200m
+            memory: 256Mi
+        envFrom:
+          - configMapRef:
+              name: ldap-env 
+        ports:
+          - containerPort: 1636 
+            name: tls
+        volumeMounts:
+          - mountPath: /opt/bitnami/openldap/certs
+            name: certs
+          - mountPath: /etc/ssl/certs
+            name: ca
+          - mountPath: /bitnami/openldap
+            name: data
+          - mountPath: /ldifs
+            name: db
+          - mountPath: /schemas
+            name: schemas
+          - mountPath: /secrets
+            name: admin-password
+      volumes:
+        - name: certs
+          secret: 
+            secretName: global-tls
+        - name: data
+          persistentVolumeClaim:
+            claimName: ldap
+        - name: ca
+          configMap:
+            name: ca-bundle
+            defaultMode: 0644
+            optional: false
+            items:
+            - key: ca-certificates.crt
+              path: ca-certificates.crt
+        - name: db
+          secret:
+            secretName: db
+        - name: schemas
+          configMap:
+            name: schemas
+        - name: admin-password 
+          secret:
+            secretName: admin-password

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ldap-env
+  namespace: ldap
+data:
+  LDAP_ENABLE_TLS: yes
+  LDAP_REQUIRE_TLS: yes
+  LDAP_TLS_KEY_FILE: /opt/bitnami/openldap/certs/tls.key
+  LDAP_TLS_CERT_FILE: /opt/bitnami/openldap/certs/tls.crt
+  LDAP_TLS_CA_FILE: /etc/ssl/certs/ca-certificates.crt
+  LDAP_ALLOW_ANON_BINDING: no
+  LDAP_ADMIN_PASSWORD_FILE: /secrets/admin.password
+  LDAP_ROOT: 'dc=${domain_name},dc=${domain_country}'
+  

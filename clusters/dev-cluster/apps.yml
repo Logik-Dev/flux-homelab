@@ -35,4 +35,11 @@ spec:
       patch: |
         - op: add
           path: /metadata/annotations/metallb.univers.tf
-          value: "loadBalancerIPs: 10.0.111.41"
+          value: "loadBalancerIPs: 192.168.11.41"
+    - target:
+        kind: ConfigMap
+        name: wireguard-env
+      patch: |
+        - op: replace
+          path: /data/INTERNAL_SUBNET
+          value: 10.12.12.0
