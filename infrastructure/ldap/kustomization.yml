@@ -5,7 +5,6 @@ resources:
   - admin-password.yml
   - schemas.yml
   - pvc.yml
-  - cm.yml
   - deployment.yml
   - service.yml
   - image-repository.yml
