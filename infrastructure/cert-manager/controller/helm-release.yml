@@ -23,18 +23,3 @@ spec:
       kind: ControllerConfiguration
       featureGates:
          ExperimentalGatewayAPISupport: true
----
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: trust-manager
-  namespace: cert-manager
-spec:
-  interval: 10m
-  chart:
-    spec:
-      chart: trust-manager
-      sourceRef:
-        kind: HelmRepository
-        name: jetstack
-      interval: 10m
