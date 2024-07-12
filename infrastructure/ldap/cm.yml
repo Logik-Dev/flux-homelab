@@ -5,7 +5,7 @@ metadata:
   namespace: ldap
 data:
   LDAP_ENABLE_TLS: yes
-  LDAP_REQUIRE_TLS: yes
+  LDAP_REQUIRE_TLS: no
   LDAP_TLS_KEY_FILE: /opt/bitnami/openldap/certs/tls.key
   LDAP_TLS_CERT_FILE: /opt/bitnami/openldap/certs/tls.crt
   LDAP_TLS_CA_FILE: /etc/ssl/certs/ca-certificates.crt

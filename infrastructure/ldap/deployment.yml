@@ -27,7 +27,9 @@ spec:
             name: ldap-env
         ports:
         - containerPort: 1636
-          name: tls
+          name: ldaps
+        - containerPort: 1389
+          name: ldap
         volumeMounts:
         - mountPath: /opt/bitnami/openldap/certs
           name: certs
