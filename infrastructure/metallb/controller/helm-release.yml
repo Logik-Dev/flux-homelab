@@ -16,7 +16,7 @@ spec:
     controller:
       image:
         repository: quay.io/metallb/controller # {"$imagepolicy": "flux-system:metallb-controller:name"}
-        tag: v0.14.7 # {"$imagepolicy": "flux-system:metallb-controller:tag"}
+        tag: v0.14.8 # {"$imagepolicy": "flux-system:metallb-controller:tag"}
     speaker:
       frr:
         enabled: false
