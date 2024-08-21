@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: prowlarr
-          image: lscr.io/linuxserver/prowlarr:1.21.2.4649-ls82 # {"$imagepolicy": "flux-system:prowlarr"}
+          image: lscr.io/linuxserver/prowlarr:1.21.2.4649-ls83 # {"$imagepolicy": "flux-system:prowlarr"}
           ports:
             - containerPort: 9696
               name: http
