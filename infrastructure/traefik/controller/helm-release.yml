@@ -1,3 +1,4 @@
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -14,12 +15,10 @@ spec:
       interval: 10m
   values:
     image:
-      #repository: traefik # {"$imagepolicy": "flux-system:traefik:name"}
-      repository: traefik
-      #tag: 3.0.4 # {"$imagepolicy": "flux-system:traefik:tag"}
-      tag: 3.1.0-rc3 
+      repository: traefik  # {"$imagepolicy": "flux-system:traefik:name"}
+      tag: 3.1.1  # {"$imagepolicy": "flux-system:traefik:tag"}
     providers:
-      #kubernetesGateway: {}
+      # kubernetesGateway: {}
       kubernetesCRD:
         enabled: true
         allowCrossNamespace: true
@@ -31,9 +30,9 @@ spec:
     experimental:
       plugins:
         bouncer:
-          moduleName: "github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin"
-          version: "v1.3.2"
-      #kubernetesGateway:
+          moduleName: github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin
+          version: v1.3.2
+      # kubernetesGateway:
       #  enabled: true
     additionalArguments:
       - --entryPoints.internal.address=:8443/tcp
