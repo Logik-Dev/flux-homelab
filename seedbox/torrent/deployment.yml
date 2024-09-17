@@ -39,7 +39,7 @@ spec:
               cpu: 300m
         # torrent
         - name: torrent
-          image: lscr.io/linuxserver/qbittorrent:4.6.6-r0-ls350 # {"$imagepolicy": "flux-system:qbittorrent"} 
+          image: lscr.io/linuxserver/qbittorrent:4.6.7-r0-ls351 # {"$imagepolicy": "flux-system:qbittorrent"} 
           ports:
             - containerPort: 8080
               name: http
