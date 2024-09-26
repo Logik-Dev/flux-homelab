@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: wireguard
-          image: lscr.io/linuxserver/wireguard:1.0.20210914-r4-ls52 # {"$imagepolicy": "flux-system:wireguard"}
+          image: lscr.io/linuxserver/wireguard:1.0.20210914-r4-ls53 # {"$imagepolicy": "flux-system:wireguard"}
           ports:
             - containerPort: 51820
               protocol: UDP
