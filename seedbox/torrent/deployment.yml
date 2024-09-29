@@ -16,7 +16,7 @@ spec:
       containers:
         # wireguard vpn
         - name: gluetun
-          image: qmcgaw/gluetun:v3.39.0 # {"$imagepolicy": "flux-system:gluetun"}
+          image: qmcgaw/gluetun:v3.39.1 # {"$imagepolicy": "flux-system:gluetun"}
           envFrom:
             - configMapRef:
                 name: common-env
