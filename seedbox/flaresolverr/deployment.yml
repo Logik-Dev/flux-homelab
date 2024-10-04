@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: flaresolverr
-          image: flaresolverr/flaresolverr:v3.3.21 # {"$imagepolicy": "flux-system:flaresolverr"}
-          #image: ghcr.io/flaresolverr/flaresolverr:pr-1282
+        #image: flaresolverr/flaresolverr:v3.3.21 # {"$imagepolicy": "flux-system:flaresolverr"}
+          image: ghcr.io/flaresolverr/flaresolverr:pr-1300
           ports:
             - containerPort: 8191
               name: http
